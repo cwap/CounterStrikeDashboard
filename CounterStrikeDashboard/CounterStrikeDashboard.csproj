@@ -59,6 +59,15 @@
     <Reference Include="Microsoft.Owin.Security">
       <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\MongoDB.Bson.2.0.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\MongoDB.Driver.2.0.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.0.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
@@ -97,6 +106,8 @@
     <Compile Include="Server\Hubs\ChatHub.cs" />
     <Compile Include="Server\Hubs\ClockHub.cs" />
     <Compile Include="Server\NancyBootstrapper.cs" />
+    <Compile Include="Server\Persistence\CounterStrikeEvent.cs" />
+    <Compile Include="Server\Persistence\Database.cs" />
     <Compile Include="Server\RootPathProvider.cs" />
     <Compile Include="Server\WebModule.cs" />
   </ItemGroup>

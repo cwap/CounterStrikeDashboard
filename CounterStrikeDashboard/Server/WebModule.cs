@@ -22,7 +22,7 @@ namespace CounterStrikeDashboard.Server
                     RConPassword = "asd"
                 });
             };
-
+					
             Get["/"] = p =>
             {
                 return View["index.html"];
