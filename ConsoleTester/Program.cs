@@ -21,12 +21,12 @@ namespace ConsoleTester
             var eventManager = new EventManager(stateKeeper);
 
             filesource.OnNewEvent += eventManager.HandleEvent;
-            filesource.Run();
+           // filesource.Run();
 
             stateKeeper.PrintScores();
 
-            //var application = new Application(server, eventManager);
-            //application.Start();
+            var application = new Application(server, eventManager);
+            application.Start();
 
             Console.ReadKey();
         }

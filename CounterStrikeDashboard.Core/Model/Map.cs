@@ -11,7 +11,11 @@ namespace CounterStrikeDashboard.Core.Model
         public Map()
         {
             Players = new List<PlayerTuple>();
-            Teams = new List<TeamTuple>();
+            Teams = new List<TeamTuple>()
+            {
+                new TeamTuple() { Team = "CT" },
+                new TeamTuple() { Team = "T" },
+            };
         }
 
         public DateTime Start { get; set; }
