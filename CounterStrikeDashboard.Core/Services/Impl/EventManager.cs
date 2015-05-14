@@ -41,7 +41,7 @@ namespace CounterStrikeDashboard.Core.Services.Impl
             //new PlantedTheBombEventHandler(),
             //new RoundStartEventHandler(),
             //new StartedDefuseBombEventHandler(),
-            //new WinEventHandler(),
+            new WinEventHandler(),
 
         };
     }

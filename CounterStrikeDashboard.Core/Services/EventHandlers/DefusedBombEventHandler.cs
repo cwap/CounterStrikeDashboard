@@ -8,7 +8,7 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 {
     class DefusedBombEventHandler : IEventHandler
     {
-
+        //Template: 
 
         public void Execute(Impl.EventParserHelpers.ParsedEvent evt, StateKeeper stateManager)
         {
