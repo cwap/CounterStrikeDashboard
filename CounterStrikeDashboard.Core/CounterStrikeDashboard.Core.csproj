@@ -63,6 +63,7 @@
     <Compile Include="Services\Impl\EventManager.cs" />
     <Compile Include="Services\Impl\EventParser.cs" />
     <Compile Include="Services\Impl\EventParserHelpers\ParsedEvent.cs" />
+    <Compile Include="Services\Impl\EventParserHelpers\PlayerParser.cs" />
     <Compile Include="Services\StateKeeper.cs" />
   </ItemGroup>
   <ItemGroup>

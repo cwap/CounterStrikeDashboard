@@ -91,6 +91,11 @@ namespace CounterStrikeDashboard.Core.Services
             CurrentMap.Active = false;
         }
 
+        public void JoinTeam(string playerString, string teamString)
+        {
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == playerString).Team = teamString;
+        }
+
         public void PrintScores()
         {
             Console.Clear();

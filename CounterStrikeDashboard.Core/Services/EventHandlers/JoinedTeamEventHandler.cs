@@ -8,14 +8,22 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 {
     class JoinedTeamEventHandler : IEventHandler
     {
+        //Template: "[P*D]Chris_Rock (100)<3><BOT><>" joined team "TERRORIST"
+
+        private const string EVENT_STRING = "\" joined team \"";
+
         public void Execute(Impl.EventParserHelpers.ParsedEvent evt, StateKeeper stateManager)
         {
-            throw new NotImplementedException();
+            var splittedEvent = evt.Event.Split(new string[] { EVENT_STRING }, StringSplitOptions.RemoveEmptyEntries);
+            var playerString = splittedEvent[0];
+            var teamString = splittedEvent[1].Substring(0, splittedEvent[1].Length - 1);
+
+            stateManager.JoinTeam(playerString, teamString);
         }
 
         public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)
         {
-            throw new NotImplementedException();
+            return evt.Event.Contains(EVENT_STRING);
         }
     }
 }

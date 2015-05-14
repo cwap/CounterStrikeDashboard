@@ -45,7 +45,7 @@ namespace CounterStrikeDashboard.Core.Services.Impl
         private readonly List<IEventHandler> _eventHandlers = new List<IEventHandler>()
         {
             //new DefusedBombEventHandler(),
-            //new JoinedTeamEventHandler(),
+            new JoinedTeamEventHandler(),
             //new KillEventHandler(),
             new MapStartedEventHandler(),
             //new PlantedTheBombEventHandler(),
