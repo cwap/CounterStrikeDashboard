@@ -21,9 +21,9 @@ namespace CounterStrikeDashboard.Core.Services
             get { return _sessions.First(); }
         }
 
-        public Round CurrentRound
+        public Map CurrentMap
         {
-            get { return CurrentSession.Rounds.First(); }
+            get { return CurrentSession.Maps.First(x => x.Active); }
         }
 
         public void StartNewSession()
@@ -31,15 +31,46 @@ namespace CounterStrikeDashboard.Core.Services
             _sessions.Add(new Session());
         }
 
-        public void StartNewRound()
+        public void StartNewMap(string mapName)
         {
-            CurrentSession.Rounds.Add(new Round());
+            CurrentSession.Maps.Insert(0, new Map()
+            {
+                Active = true,
+                MapName = mapName,
+                Start = DateTime.Now
+            });
         }
 
-        public void ApplyKill(string killer)
+        public void AddPlayer(string name, string uniqueIdentifier)
         {
-            var score = CurrentRound.Scores.First(x => x.Player.Name.Equals(killer));
-            score.Kills++;
+            CurrentMap.Players.Add(new PlayerTuple()
+            {
+                Name = name,
+                UniqueIdentifier = uniqueIdentifier,
+                Connected = true
+            });
+        }
+
+        public void RemovePlayer(string uniqueIdentifier)
+        {
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Connected = false;
+        }
+
+        public void ChangePlayerName(string oldName, string newName, string uniqueIdentifier)
+        {
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
+        }
+
+        public void ApplyKill(string killerUId, string deadPersonUId)
+        {
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == killerUId).Kills++;
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;
+        }
+
+        public void EndMap(string winnerTeam)
+        {
+            CurrentMap.Teams.Single(x => x.Team == winnerTeam).Score++;
+            CurrentMap.Active = false;
         }
     }
 }

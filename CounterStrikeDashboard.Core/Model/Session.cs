@@ -10,9 +10,9 @@ namespace CounterStrikeDashboard.Core.Model
     {
         public Session()
         {
-            Rounds = new List<Round>();
+            Maps = new List<Map>();
         }
 
-        public List<Round> Rounds { get; set; }
+        public List<Map> Maps { get; set; }
     }
 }

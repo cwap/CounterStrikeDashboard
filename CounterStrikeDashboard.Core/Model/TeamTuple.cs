@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Model
 {
-    public class Player
+    public class TeamTuple
     {
-        public string Name { get; set; }
+        public string Team { get; set; }
+        public int Score { get; set; }
     }
 }

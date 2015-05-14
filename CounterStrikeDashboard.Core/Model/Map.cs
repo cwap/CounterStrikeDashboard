@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Model
 {
-    public class Round
+    public class Map
     {
-        public Round()
+        public Map()
         {
-            Scores = new List<ScoreTuple>();
+            Players = new List<PlayerTuple>();
+            Teams = new List<TeamTuple>();
         }
 
         public DateTime Start { get; set; }
-        public string Map { get; set; }
-        public List<ScoreTuple> Scores { get; set; }
+        public string MapName { get; set; }
+        public List<PlayerTuple> Players { get; set; }
+        public List<TeamTuple> Teams { get; set; }
         public bool Active { get; set; }
     }
 }
