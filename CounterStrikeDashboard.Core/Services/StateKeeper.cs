@@ -68,7 +68,7 @@ namespace CounterStrikeDashboard.Core.Services
                 CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
         }
 
-        public void ApplyKill(string killerName, string killerUId, string deadPersonUId, string deadPersonName)
+        public void ApplyKill(string killerName, string killerUId, string deadPersonName, string deadPersonUId)
         {
             if (killerUId == "BOT")
                 CurrentMap.Players.Single(x => x.Name == killerName).Kills++;

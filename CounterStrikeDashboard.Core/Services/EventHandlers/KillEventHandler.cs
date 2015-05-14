@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Services.EventHandlers
@@ -13,7 +14,7 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 
         public bool Matches(ParsedEvent evt)
         {
-            return evt.Event.Contains("killed");
+            return evt.Event.Contains("\" killed \"");
         }
 
         public void Execute(ParsedEvent evt, StateKeeper stateManager)
@@ -32,13 +33,20 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 
             ParsePlayer(killerString, out killerName, out killerUid);
             ParsePlayer(deadManString, out deadManName, out deadManUid);
+
+            stateManager.ApplyKill(killerName, killerUid, deadManName, deadManUid);
         }
 
         private void ParsePlayer(string playerString, out string player, out string uid)
         {
             // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>"
-            player = "Hej";
-            uid = "lol";
+            var playerRegex = new Regex("\".*?<");
+            var almostPlayerName = playerRegex.Match(playerString).Value;
+            player = almostPlayerName.Substring(1, almostPlayerName.Length - 2);
+
+            var uidRegex = new Regex("<.*?>");
+            var almostPlayerUid = uidRegex.Matches(playerString)[1].Value;
+            uid = almostPlayerUid.Substring(1, almostPlayerUid.Length - 2);
         }
     }
 }
