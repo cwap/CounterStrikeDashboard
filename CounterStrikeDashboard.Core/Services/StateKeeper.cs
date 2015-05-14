@@ -111,7 +111,7 @@ namespace CounterStrikeDashboard.Core.Services
                     Console.WriteLine("Map: {0}", map.MapName);
                     Console.WriteLine("Started: {0}", map.Start);
                     Console.WriteLine();
-                    Console.WriteLine("CT: {0}, T: {1}", map.Teams.Single(x => x.Team == "CT"), map.Teams.Single(x => x.Team == "T"));
+                    Console.WriteLine("CT: {0}, T: {1}", map.Teams.Single(x => x.Team == "CT").Score, map.Teams.Single(x => x.Team == "T").Score);
                     Console.WriteLine("----------");
                     Console.WriteLine("-- CT's --");
                     foreach (var player in map.Players.Where(x => x.Team == "CT"))
