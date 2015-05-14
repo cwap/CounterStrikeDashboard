@@ -1,4 +1,5 @@
 ﻿using CounterStrikeDashboard.Core.Services.EventHandlers;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,8 @@ namespace CounterStrikeDashboard.Core.Services.Impl
 {
     public class EventManager : IEventManager
     {
+        private static readonly Logger _log = LogManager.GetCurrentClassLogger();
+
         private IEventParser _eventParser;
         private StateKeeper _stateKeeper;
 
@@ -23,12 +26,19 @@ namespace CounterStrikeDashboard.Core.Services.Impl
         {
             Console.WriteLine(evt);
 
-            var csEvent = _eventParser.ParseEvent(evt);
-
-            foreach (var eventHandler in _eventHandlers)
+            try
             {
-                if (csEvent != null && eventHandler.Matches(csEvent))
-                    eventHandler.Execute(csEvent, _stateKeeper);
+                var csEvent = _eventParser.ParseEvent(evt);
+
+                foreach (var eventHandler in _eventHandlers)
+                {
+                    if (csEvent != null && eventHandler.Matches(csEvent))
+                        eventHandler.Execute(csEvent, _stateKeeper);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Warn(String.Format("Ignoring event since we got error while parsing event: {0}", evt), ex);
             }
         }
 

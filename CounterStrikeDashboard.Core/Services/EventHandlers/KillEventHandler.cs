@@ -29,12 +29,16 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 
             string deadManName;
             string deadManUid;
+
+            ParsePlayer(killerString, out killerName, out killerUid);
+            ParsePlayer(deadManString, out deadManName, out deadManUid);
         }
 
         private void ParsePlayer(string playerString, out string player, out string uid)
         {
             // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>"
-
+            player = "Hej";
+            uid = "lol";
         }
     }
 }
