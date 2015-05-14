@@ -12,6 +12,7 @@ namespace CounterStrikeDashboard.Core.Services
         public StateKeeper()
         {
             _sessions = new List<Session>();
+            _sessions.Add(new Session());
         }
 
         List<Session> _sessions;

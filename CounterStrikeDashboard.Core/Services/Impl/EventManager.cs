@@ -21,6 +21,8 @@ namespace CounterStrikeDashboard.Core.Services.Impl
 
         public void HandleEvent(string evt)
         {
+            Console.WriteLine(evt);
+
             var csEvent = _eventParser.ParseEvent(evt);
 
             foreach (var eventHandler in _eventHandlers)
