@@ -19,12 +19,22 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
         public void Execute(ParsedEvent evt, StateKeeper stateManager)
         {
             var splitted = evt.Event.Split(new string[] { " killed " }, StringSplitOptions.RemoveEmptyEntries);
-            var killer = splitted[0];
+            var killerString = splitted[0];            
 
             var rightSplitted = splitted[1].Split(new string[] { " with " }, StringSplitOptions.RemoveEmptyEntries);
-            var deadMan = rightSplitted[0];
+            var deadManString = rightSplitted[0];
 
-            //stateManager.ApplyKill(
+            string killerName;
+            string killerUid;
+
+            string deadManName;
+            string deadManUid;
+        }
+
+        private void ParsePlayer(string playerString, out string player, out string uid)
+        {
+            // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>"
+
         }
     }
 }

@@ -52,20 +52,33 @@ namespace CounterStrikeDashboard.Core.Services
             });
         }
 
-        public void RemovePlayer(string uniqueIdentifier)
+        public void RemovePlayer(string name, string uniqueIdentifier)
         {
-            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Connected = false;
+            if (uniqueIdentifier == "BOT")
+                CurrentMap.Players.Single(x => x.Name == uniqueIdentifier).Connected = false;
+            else
+                CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Connected = false;
         }
 
         public void ChangePlayerName(string oldName, string newName, string uniqueIdentifier)
         {
-            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
+            if (uniqueIdentifier == "BOT")
+                CurrentMap.Players.Single(x => x.Name == oldName).Name = newName;
+            else
+                CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
         }
 
-        public void ApplyKill(string killerUId, string deadPersonUId)
+        public void ApplyKill(string killerName, string killerUId, string deadPersonUId, string deadPersonName)
         {
-            CurrentMap.Players.Single(x => x.UniqueIdentifier == killerUId).Kills++;
-            CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;
+            if (killerUId == "BOT")
+                CurrentMap.Players.Single(x => x.Name == killerName).Kills++;
+            else
+                CurrentMap.Players.Single(x => x.UniqueIdentifier == killerUId).Kills++;
+
+            if (deadPersonUId == "BOT")
+                CurrentMap.Players.Single(x => x.Name == deadPersonName).Deaths++;
+            else
+                CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;            
         }
 
         public void EndRound(string winnerTeam)
