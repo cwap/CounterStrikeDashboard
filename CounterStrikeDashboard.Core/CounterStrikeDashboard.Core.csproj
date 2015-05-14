@@ -50,8 +50,15 @@
     <Compile Include="Model\Session.cs" />
     <Compile Include="Model\TeamTuple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EventHandlers\DefusedBombEventHandler.cs" />
     <Compile Include="Services\EventHandlers\IEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\JoinedTeamEventHandler.cs" />
     <Compile Include="Services\EventHandlers\KillEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\MapStartedEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\PlantedTheBombEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\RoundStartEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\StartedDefuseBombEventHandler.cs" />
+    <Compile Include="Services\EventHandlers\WinEventHandler.cs" />
     <Compile Include="Services\IEventManager.cs" />
     <Compile Include="Services\IEventParser.cs" />
     <Compile Include="Services\Impl\EventManager.cs" />
