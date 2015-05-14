@@ -25,21 +25,21 @@ namespace CounterStrikeDashboard.Core.Services.Impl
 
             foreach (var eventHandler in _eventHandlers)
             {
-                if (eventHandler.Matches(csEvent))
+                if (csEvent != null && eventHandler.Matches(csEvent))
                     eventHandler.Execute(csEvent, _stateKeeper);
             }
         }
 
         private readonly List<IEventHandler> _eventHandlers = new List<IEventHandler>()
         {
-            new DefusedBombEventHandler(),
-            new JoinedTeamEventHandler(),
-            new KillEventHandler(),
+            //new DefusedBombEventHandler(),
+            //new JoinedTeamEventHandler(),
+            //new KillEventHandler(),
             new MapStartedEventHandler(),
-            new PlantedTheBombEventHandler(),
-            new RoundStartEventHandler(),
-            new StartedDefuseBombEventHandler(),
-            new WinEventHandler(),
+            //new PlantedTheBombEventHandler(),
+            //new RoundStartEventHandler(),
+            //new StartedDefuseBombEventHandler(),
+            //new WinEventHandler(),
 
         };
     }

@@ -17,7 +17,7 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
 
         public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

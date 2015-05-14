@@ -56,7 +56,6 @@
     <Compile Include="Services\EventHandlers\KillEventHandler.cs" />
     <Compile Include="Services\EventHandlers\MapStartedEventHandler.cs" />
     <Compile Include="Services\EventHandlers\PlantedTheBombEventHandler.cs" />
-    <Compile Include="Services\EventHandlers\RoundStartEventHandler.cs" />
     <Compile Include="Services\EventHandlers\StartedDefuseBombEventHandler.cs" />
     <Compile Include="Services\EventHandlers\WinEventHandler.cs" />
     <Compile Include="Services\IEventManager.cs" />
