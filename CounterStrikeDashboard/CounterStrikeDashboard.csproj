@@ -314,6 +314,9 @@
     <None Include="Client\Content\signalr\jquery.signalR.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <TypeScriptCompile Include="Client\App\Models\Player.ts" />
+    <TypeScriptCompile Include="Client\App\Services\ScoreHub.ts" />
+    <TypeScriptCompile Include="Client\App\Services\HubBase.ts" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />

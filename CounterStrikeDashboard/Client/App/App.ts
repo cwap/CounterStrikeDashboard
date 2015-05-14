@@ -3,7 +3,8 @@
 
     var csDashApp = angular.module('csDashApp', ['ngRoute'])
         .controller('dashboardController', DashboardController)
-        .controller('configurationController', ConfigurationController);
+        .controller('configurationController', ConfigurationController)
+        .service('hubBase', HubBase);
    
     csDashApp.config(function ($routeProvider) {
         $routeProvider
