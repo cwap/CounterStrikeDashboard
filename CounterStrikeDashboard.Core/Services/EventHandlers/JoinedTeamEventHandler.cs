@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CounterStrikeDashboard.Core.Services.Impl.EventParserHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,13 @@ namespace CounterStrikeDashboard.Core.Services.EventHandlers
             var playerString = splittedEvent[0];
             var teamString = splittedEvent[1].Substring(0, splittedEvent[1].Length - 1);
 
-            stateManager.JoinTeam(playerString, teamString);
+            string playerUid;
+            string playerName;
+
+            PlayerParser.ParsePlayer(playerString, out playerName, out playerUid);
+
+            stateManager.AddPlayer(playerName, playerUid);
+            stateManager.JoinTeam(playerUid, playerName, teamString == "TERRORIST" ? "T" : "CT");
         }
 
         public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)

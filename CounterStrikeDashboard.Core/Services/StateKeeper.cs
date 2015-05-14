@@ -91,14 +91,17 @@ namespace CounterStrikeDashboard.Core.Services
             CurrentMap.Active = false;
         }
 
-        public void JoinTeam(string playerString, string teamString)
+        public void JoinTeam(string playerUid, string playerName, string teamString)
         {
-            CurrentMap.Players.Single(x => x.UniqueIdentifier == playerString).Team = teamString;
+            if (playerUid == "BOT")
+                CurrentMap.Players.Single(x => x.Name == playerName).Team = teamString;
+            else 
+                CurrentMap.Players.Single(x => x.UniqueIdentifier == playerUid).Team = teamString;
         }
 
         public void PrintScores()
         {
-            Console.Clear();
+           // Console.Clear();
 
             Console.WriteLine("SCORES:");
             Console.WriteLine();

@@ -46,7 +46,7 @@ namespace CounterStrikeDashboard.Core.Services.Impl
         {
             //new DefusedBombEventHandler(),
             new JoinedTeamEventHandler(),
-            //new KillEventHandler(),
+            new KillEventHandler(),
             new MapStartedEventHandler(),
             //new PlantedTheBombEventHandler(),
             //new RoundStartEventHandler(),
