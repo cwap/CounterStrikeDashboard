@@ -23,6 +23,8 @@ namespace ConsoleTester
             filesource.OnNewEvent += eventManager.HandleEvent;
             filesource.Run();
 
+            stateKeeper.PrintScores();
+
             //var application = new Application(server, eventManager);
             //application.Start();
 

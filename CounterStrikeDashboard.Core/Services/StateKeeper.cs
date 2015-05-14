@@ -67,10 +67,51 @@ namespace CounterStrikeDashboard.Core.Services
             CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;
         }
 
-        public void EndMap(string winnerTeam)
+        public void EndRound(string winnerTeam)
         {
             CurrentMap.Teams.Single(x => x.Team == winnerTeam).Score++;
+        }
+
+        public void EndMap()
+        {
             CurrentMap.Active = false;
+        }
+
+        public void PrintScores()
+        {
+            Console.Clear();
+
+            Console.WriteLine("SCORES:");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            foreach (var session in _sessions)
+            {
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("-------- SESSION --------");
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("Session started: {0}", session.Started);
+
+                foreach (var map in session.Maps)
+                {
+                    Console.WriteLine("Map: {0}", map.MapName);
+                    Console.WriteLine("Started: {0}", map.Start);
+                    Console.WriteLine();
+                    Console.WriteLine("CT: {0}, T: {1}", map.Teams.Single(x => x.Team == "CT"), map.Teams.Single(x => x.Team == "T"));
+                    Console.WriteLine("----------");
+                    Console.WriteLine("-- CT's --");
+                    foreach (var player in map.Players.Where(x => x.Team == "CT"))
+                    {
+                        Console.WriteLine("{0} - {1} kills - {2} deaths", player.Name, player.Kills, player.Deaths);
+                    }
+
+                    Console.WriteLine("--- T's --");
+                    foreach (var player in map.Players.Where(x => x.Team == "T"))
+                    {
+                        Console.WriteLine("{0} - {1} kills - {2} deaths", player.Name, player.Kills, player.Deaths);
+                    }
+                }
+            }
         }
     }
 }

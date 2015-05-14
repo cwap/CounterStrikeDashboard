@@ -14,5 +14,6 @@ namespace CounterStrikeDashboard.Core.Model
         }
 
         public List<Map> Maps { get; set; }
+        public DateTime Started { get; set; }
     }
 }

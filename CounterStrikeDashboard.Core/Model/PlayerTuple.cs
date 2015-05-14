@@ -11,6 +11,8 @@ namespace CounterStrikeDashboard.Core.Model
         public string Name { get; set; }
         public string UniqueIdentifier { get; set; }
 
+        public string Team { get; set; }
+
         public int Kills { get; set; }
         public int Deaths { get; set; }
 
