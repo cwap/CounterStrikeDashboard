@@ -1,6 +1,7 @@
-﻿using CounterStrikeDashboard.Core.Model.Events;
+﻿using CounterStrikeDashboard.Core.Services.EventHandlers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,21 +11,29 @@ namespace CounterStrikeDashboard.Core.Services.Impl
     public class EventManager : IEventManager
     {
         private IEventParser _eventParser;
-        
-        public EventManager(IEventParser eventParser = null)
+        private StateKeeper _stateKeeper;
+
+        public EventManager(StateKeeper stateKeeper, IEventParser eventParser = null)
         {
             this._eventParser = eventParser ?? new EventParser();
+            this._stateKeeper = stateKeeper;
         }
 
         public void HandleEvent(string evt)
         {
             var csEvent = _eventParser.ParseEvent(evt);
 
-            if (csEvent is KillEvent)
+            foreach (var eventHandler in _eventHandlers)
             {
-                var killEvent = (KillEvent)csEvent;
-                Console.WriteLine("{0}: {1} killed {2} using {3}", killEvent.DateTime, killEvent.Killer, killEvent.Died, killEvent.Weapon);
+                if (eventHandler.Matches(csEvent))
+                    eventHandler.Execute(csEvent, _stateKeeper);
             }
         }
+
+        private readonly List<IEventHandler> _eventHandlers = new List<IEventHandler>()
+        {
+            new KillEventHandler(),
+
+        };
     }
 }

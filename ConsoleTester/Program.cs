@@ -1,5 +1,6 @@
 ﻿using CounterStrikeDashboard.Communication;
 using CounterStrikeDashboard.Core;
+using CounterStrikeDashboard.Core.Services;
 using CounterStrikeDashboard.Core.Services.Impl;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace ConsoleTester
         {
             var filesource = new FileEventSource();
             var server = new CommunicationServer();
-            var eventManager = new EventManager();
+            var stateKeeper = new StateKeeper();
+            var eventManager = new EventManager(stateKeeper);
 
             filesource.OnNewEvent += eventManager.HandleEvent;
             filesource.Run();

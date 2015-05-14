@@ -14,7 +14,7 @@ namespace ConsoleTester
 
         public void Run()
         {
-            using (var file = File.OpenText("log.txt"))
+            using (var file = File.OpenText("lol3.txt"))
             {
                 while (!file.EndOfStream)
                 {

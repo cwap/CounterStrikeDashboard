@@ -1,5 +1,5 @@
 ﻿using CounterStrikeDashboard.Core.Model;
-using CounterStrikeDashboard.Core.Model.Events;
+using CounterStrikeDashboard.Core.Services.Impl.EventParserHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace CounterStrikeDashboard.Core.Services
 {
     public interface IEventParser
     {
-        CounterStrikeEvent ParseEvent(string evt);
+        ParsedEvent ParseEvent(string evt);
     }
 }

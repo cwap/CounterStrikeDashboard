@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Services
 {
-    public class StateManager
+    public class StateKeeper
     {
-        public StateManager()
+        public StateKeeper()
         {
             _sessions = new List<Session>();
         }

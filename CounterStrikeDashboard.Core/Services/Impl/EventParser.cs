@@ -1,5 +1,4 @@
 ﻿using CounterStrikeDashboard.Core.Model;
-using CounterStrikeDashboard.Core.Model.Events;
 using CounterStrikeDashboard.Core.Services.Impl.EventParserHelpers;
 using System;
 using System.Collections.Generic;
@@ -12,38 +11,7 @@ namespace CounterStrikeDashboard.Core.Services.Impl
 {
     public class EventParser : IEventParser
     {
-        public CounterStrikeEvent ParseEvent(string evt)
-        {
-            var parsedEvent = ParseAction(evt);
-
-            if (parsedEvent == null)
-                return new NullEvent(evt);
-
-            if (parsedEvent.Action == "killed")
-            {
-                return new KillEvent(evt)
-                {
-                    DateTime = parsedEvent.DateTime,
-                    Killer = parsedEvent.Left,                    
-                    Died = parsedEvent.Right,
-                    Weapon = parsedEvent.ContextProperty
-                };
-            }
-
-            return new NullEvent(evt);
-        }
-
-        private string CleanEvent(string evt)
-        {
-            const int OFFSET = 10;
-
-            if (evt.Length <= OFFSET)
-                return null;
-
-            return evt.Substring(OFFSET).Trim();
-        }
-
-        private ParsedEvent ParseAction(string evt)
+        public ParsedEvent ParseEvent(string evt)
         {
             evt = CleanEvent(evt);
 
@@ -57,84 +25,21 @@ namespace CounterStrikeDashboard.Core.Services.Impl
 
             var result = new ParsedEvent()
             {
-                DateTime = DateTime.ParseExact(datepart, "MM/dd/yyyy - HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture)
+                DateTime = DateTime.ParseExact(datepart, "MM/dd/yyyy - HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture),
+                Event = evt
             };
 
-            foreach (var kvp in _actions)
-            {
-                var action = kvp.Key;
-                var info = kvp.Value;
-
-                if (evt.Contains(action))
-                {                   
-                    var splitted = evt.Split(new string[] { action }, StringSplitOptions.RemoveEmptyEntries);
-                    if (!info.IsContextEvent)
-                    {
-                        result.Left = TrimValue(splitted[0]);
-                        result.Action = action.Trim();
-                        result.Right = TrimValue(splitted[1]);
-                    }
-                    else
-                    {
-                        var ctxString = splitted[1];
-
-                        for (int i = 0; i < _contextActions.Length; i++)
-                        {
-                            var ctxAction = _contextActions[i];
-                            if (ctxString.Contains(ctxAction))
-                            {
-                                var ctxSplitted = ctxString.Split(new string[] { ctxAction }, StringSplitOptions.RemoveEmptyEntries);
-
-                                result.Left = TrimValue(splitted[0]);
-                                result.Action = action;
-                                result.Right = TrimValue(ctxSplitted[0]);
-                                result.ContextAction = ctxAction;
-                                result.ContextProperty = TrimValue(ctxSplitted[1]);
-                                break;
-                            }
-                        }
-                    }
-
-                    return result;
-                }
-            }
-
-            return null;
+            return result;
         }
 
-        private string TrimValue(string value)
+        private string CleanEvent(string evt)
         {
-            int start;
-            int end;
+            const int OFFSET = 10;
 
-            for (start = 0; start < value.Length; start++)
-            {
-                if (value[start] == '\"')
-                {
-                    start++;
-                    break;
-                }
-            }
+            if (evt.Length <= OFFSET)
+                return null;
 
-            for (end = value.Length - 1; end >= 0; end-- )
-            {
-                if (value[end] == '\"')
-                {
-                    break;
-                }
-            }
-
-            return value.Substring(start, end - start);
-        }
-
-        private Dictionary<string, EventInformation> _actions = new Dictionary<string,EventInformation>
-        {
-            { "killed", new EventInformation(true) }
-        };
-
-        private string[] _contextActions = new string[]
-        {
-            "with"
-        };
+            return evt.Substring(OFFSET).Trim();
+        }     
     }
 }
