@@ -1,13 +1,12 @@
 ﻿module csdash {
-    'use strict';
-
     export class ConfigurationController {
         public static $inject = [
             '$scope',
+            '$http'
         ];
-
-        constructor(private $scope: any) {
-            $scope.text = "Hej text";
+        
+        constructor(private $scope: any, $http: any) {
+            
         }
     }
 }

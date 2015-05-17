@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Infrastructure
 {
-    public interface ICounterStrikeCommunicationServer : IEventSource
+    public interface ICounterStrikeCommunicationServer : ICsEventSource
     {
         bool IsRunning { get; }        
         event Action OnClosed;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Model
 {
-    public class Map
+    public class Map : ModelBase
     {
         public Map()
         {

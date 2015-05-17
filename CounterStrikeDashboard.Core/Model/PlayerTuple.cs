@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Model
 {
-    public class PlayerTuple
+    public class PlayerTuple : ModelBase
     {
         public string Name { get; set; }
         public string UniqueIdentifier { get; set; }

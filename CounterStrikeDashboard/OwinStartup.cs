@@ -1,4 +1,8 @@
-﻿using Owin;
+﻿using CounterStrikeDashboard.Server.Bootstrap;
+using CounterStrikeDashboard.Server.Hubs;
+using Microsoft.AspNet.SignalR;
+using Nancy.TinyIoc;
+using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +15,19 @@ namespace CounterStrikeDashboard
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR().UseNancy();
+            GlobalHost.HubPipeline.AddModule(new SignalRErrorHandler());
+
+            var container = new TinyIoCContainer();
+
+            app.MapSignalR(new HubConfiguration()
+                {
+                    //Resolver = new TinyIoCDependencyResolver(container)
+                });
+                
+            app.UseNancy(new Nancy.Owin.NancyOptions()
+                {
+                    Bootstrapper = new NancyBootstrapper(container)
+                });            
         }
     }
 }

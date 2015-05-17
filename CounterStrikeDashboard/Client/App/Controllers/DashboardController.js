@@ -1,70 +1,44 @@
 ﻿var csdash;
 (function (csdash) {
     var DashboardController = (function () {
-        function DashboardController($scope, hubBase) {
+        function DashboardController($scope, $http, eventHub) {
             this.$scope = $scope;
-            this.hubBase = hubBase;
-            hubBase.addStateListener(function (state) {
-                $scope.state = state;
+            this.$http = $http;
+            this.eventHub = eventHub;
+            this.fixScope($scope);
+
+            eventHub.addNewEventListener(function (event) {
+                console.log("Got new event: " + event);
+                $scope.dashboard.events.push(event);
+                $scope.$apply();
             });
 
-            var players = [];
-
-            var p1 = new Player();
-            p1.name = "Allan";
-            p1.ip = "127.0.0.1";
-            p1.ping = 13;
-            p1.kills = 37;
-            players.push(p1);
-
-            var p2 = new Player();
-            p2.name = "Chr7";
-            p2.ip = "127.0.0.2";
-            p2.ping = 14;
-            p2.kills = 5;
-            players.push(p2);
-
-            var p3 = new Player();
-            p3.name = "Jeppe";
-            p3.ip = "22.0.0.22";
-            p3.ping = 1000;
-            p3.kills = -5;
-            players.push(p3);
-
-            $scope.currentScoreTable = players;
-            $scope.totalScoreTable = players;
+            $http.get('/sessions').success(function (data, status, headers, config) {
+                var sessions = csdash.Serializer.deserializeObj(data);
+                $scope.sessions = sessions;
+            }).error(function (data, status, headers, config) {
+                console.log("Unable to get session data");
+            });
         }
+        DashboardController.prototype.fixScope = function ($scope) {
+            if (!$scope.scores) {
+                $scope.scores = {};
+            }
+
+            if (!$scope.dashboard) {
+                $scope.dashboard = {};
+            }
+
+            if (!$scope.dashboard.events) {
+                $scope.dashboard.events = [];
+            }
+        };
         DashboardController.$inject = [
             '$scope',
-            'hubBase'
+            '$http',
+            'eventHub'
         ];
         return DashboardController;
     })();
     csdash.DashboardController = DashboardController;
 })(csdash || (csdash = {}));
-/*$(function () {
-// Declare a proxy to reference the hub.
-var chat = $.connection.chatHub;
-// Create a function that the hub can call to broadcast messages.
-chat.client.broadcastMessage = function (name, message) {
-// Html encode display name and message.
-var encodedName = $('<div />').text(name).html();
-var encodedMsg = $('<div />').text(message).html();
-// Add the message to the page.
-$('#discussion').append('<li><strong>' + encodedName
-+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
-};
-// Get the user name and store it to prepend to messages.
-$('#displayname').val("asd");
-// Set initial focus to message input box.
-$('#message').focus();
-// Start the connection.
-$.connection.hub.start().done(function () {
-$('#sendmessage').click(function () {
-// Call the Send method on the hub.
-chat.server.send($('#displayname').val(), $('#message').val());
-// Clear text box and reset focus for next comment.
-$('#message').val('').focus();
-});
-});
-});*/

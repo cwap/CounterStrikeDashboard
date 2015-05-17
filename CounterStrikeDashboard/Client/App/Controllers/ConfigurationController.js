@@ -1,14 +1,12 @@
 ﻿var csdash;
 (function (csdash) {
-    'use strict';
-
     var ConfigurationController = (function () {
-        function ConfigurationController($scope) {
+        function ConfigurationController($scope, $http) {
             this.$scope = $scope;
-            $scope.text = "Hej text";
         }
         ConfigurationController.$inject = [
-            '$scope'
+            '$scope',
+            '$http'
         ];
         return ConfigurationController;
     })();

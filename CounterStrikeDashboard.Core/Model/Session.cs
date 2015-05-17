@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Model
 {
-    public class Session
+    public class Session : ModelBase
     {
         public Session()
         {

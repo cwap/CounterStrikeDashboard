@@ -7,20 +7,36 @@
 
     <link rel="stylesheet" type="text/css" href="Content/materialize/dist/css/materialize.min.css" />
 </head>
-<body ng-app="csDashApp">
+<body ng-app="csDashApp" ng-controller="appController">
     <header>
         <nav class="indigo darken-1">
-            <div class="nav-wrapper">
-                <div class="container">
-                    <ul class="left">
-                        <li class="active"><a href="#/">Dashboard</a></li>
-                        <li><a href="#configuration">Configuration</a></li>
-                    </ul>
-                </div>
+            <div class="nav-wrapper container">
+                <ul class="left">
+                    <li ng-class="{active: $route.current.activetab == 'dashboard'}"><a href="#/">Dashboard</a></li>
+                    <li ng-class="{active: $route.current.activetab == 'configuration'}"><a href="#configuration">Configuration</a></li>
+                </ul>
+                <ul class="right" ng-switch="hub.state">
+                    <li class="animate-switch valign-wrapper green-text" ng-switch-when="0">
+                        Connected
+                        <i class="mdi-communication-import-export"></i>
+                    </li>
+                    <li class="animate-switch valign-wrapper yellow-text" ng-switch-when="1">
+                        Connecting
+                        <i class="mdi-notification-sync"></i>
+                    </li>
+                    <li class="animate-switch valign-wrapper red-text" ng-switch-when="2">                        
+                        Disconnected
+                        <i class="mdi-notification-do-not-disturb"></i>
+                    </li>
+                    <li class="animate-switch valign-wrapper red-text" ng-switch-when="3">                        
+                        Reconnecting
+                        <i class="mdi-notification-sync"></i>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-
+    
     <main>
         <div class="container">
             <div ng-view></div>
@@ -54,15 +70,25 @@
 
     <script src="signalr/signalr/hubs"></script>
 
+    <!-- COMMON -->
+    <script type="text/javascript" src="App/Common/Serializer.js"></script>
+
     <!-- MODELS -->
-    <script type="text/javascript" src="App/Models/Player.js"></script>
+    <script type="text/javascript" src="App/Models/ISerializable.js"></script>
+    <script type="text/javascript" src="App/Models/Map.js"></script>
+    <script type="text/javascript" src="App/Models/PlayerTuple.js"></script>
+    <script type="text/javascript" src="App/Models/Session.js"></script>
+    <script type="text/javascript" src="App/Models/TeamTuple.js"></script>
 
     <!-- SERVICES -->
+    <script type="text/javascript" src="App/Services/HubService.js"></script>
     <script type="text/javascript" src="App/Services/HubBase.js"></script>
+    <script type="text/javascript" src="App/Services/EventHub.js"></script>
 
     <!-- CONTROLLERS -->
     <script type="text/javascript" src="App/Controllers/DashboardController.js"></script>
     <script type="text/javascript" src="App/Controllers/ConfigurationController.js"></script>
+    <script type="text/javascript" src="App/Controllers/AppController.js"></script>
     <script type="text/javascript" src="App/App.js"></script>
 </body>
 </html>

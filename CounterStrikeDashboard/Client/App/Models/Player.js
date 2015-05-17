@@ -1,11 +1,9 @@
 ﻿var csdash;
 (function (csdash) {
-    'use strict';
-
-    var Player = (function () {
-        function Player() {
+    var PlayerTuple = (function () {
+        function PlayerTuple() {
         }
-        Object.defineProperty(Player.prototype, "name", {
+        Object.defineProperty(PlayerTuple.prototype, "name", {
             get: function () {
                 return this._name;
             },
@@ -17,7 +15,7 @@
         });
 
 
-        Object.defineProperty(Player.prototype, "kills", {
+        Object.defineProperty(PlayerTuple.prototype, "kills", {
             get: function () {
                 return this._kills;
             },
@@ -29,7 +27,7 @@
         });
 
 
-        Object.defineProperty(Player.prototype, "deaths", {
+        Object.defineProperty(PlayerTuple.prototype, "deaths", {
             get: function () {
                 return this._deaths;
             },
@@ -41,7 +39,7 @@
         });
 
 
-        Object.defineProperty(Player.prototype, "ping", {
+        Object.defineProperty(PlayerTuple.prototype, "ping", {
             get: function () {
                 return this._ping;
             },
@@ -53,7 +51,7 @@
         });
 
 
-        Object.defineProperty(Player.prototype, "ip", {
+        Object.defineProperty(PlayerTuple.prototype, "ip", {
             get: function () {
                 return this._ip;
             },
@@ -64,7 +62,7 @@
             configurable: true
         });
 
-        return Player;
+        return PlayerTuple;
     })();
-    csdash.Player = Player;
+    csdash.PlayerTuple = PlayerTuple;
 })(csdash || (csdash = {}));

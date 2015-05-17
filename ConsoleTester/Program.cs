@@ -1,7 +1,8 @@
 ﻿using CounterStrikeDashboard.Communication;
 using CounterStrikeDashboard.Core;
+using CounterStrikeDashboard.Core.Api;
+using CounterStrikeDashboard.Core.CsEvents.Impl;
 using CounterStrikeDashboard.Core.Services;
-using CounterStrikeDashboard.Core.Services.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +18,17 @@ namespace ConsoleTester
         {
             var filesource = new FileEventSource();
             var server = new CommunicationServer();
-            var stateKeeper = new StateKeeper();
-            var eventManager = new EventManager(stateKeeper);
+            var eventManager = new EventManager();
+            var scoreKeeper = new ScoreKeeper(eventManager);
 
             filesource.OnNewEvent += eventManager.HandleEvent;
             filesource.Run();
 
-            stateKeeper.PrintScores();
+            scoreKeeper.PrintScores();
 
-            var application = new Application(server, eventManager);
+            //Timer t = new Timer(new TimerCallback(x => stateKeeper.PrintScores()), null, 0, 5000);
+
+            //var application = new Application(server, eventManager);
             //application.Start();
 
             Console.ReadKey();

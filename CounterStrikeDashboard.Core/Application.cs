@@ -1,4 +1,5 @@
-﻿using CounterStrikeDashboard.Core.Infrastructure;
+﻿using CounterStrikeDashboard.Core.CsEvents;
+using CounterStrikeDashboard.Core.Infrastructure;
 using CounterStrikeDashboard.Core.Services;
 using System;
 using System.Collections.Generic;

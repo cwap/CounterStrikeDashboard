@@ -1,4 +1,7 @@
-﻿using CounterStrikeDashboard.Infrastructure;
+﻿using CounterStrikeDashboard.Core.Api;
+using CounterStrikeDashboard.Infrastructure;
+using CounterStrikeDashboard.Server.Hubs;
+using Microsoft.AspNet.SignalR;
 using Nancy;
 using System;
 using System.Collections.Generic;
@@ -10,22 +13,16 @@ namespace CounterStrikeDashboard.Server
 {
     public class WebModule : NancyModule
     {
-        public WebModule()
-        {
-            Get["/status"] = parameters =>
-            {
-                var communicator = new CounterStrikeCommunicator();
-                return communicator.GetStatus(new CounterStrikeCommunicatorConfiguration()
-                {
-                    Ip = "192.168.0.102",
-                    Port = 27015,
-                    RConPassword = "asd"
-                });
-            };
-					
+        public WebModule(ScoreKeeper scoreKeeper, EventHub eventHub)
+        {            
             Get["/"] = p =>
             {
                 return View["index.html"];
+            };
+
+            Get["/sessions"] = p =>
+            {
+                return Response.AsJson(scoreKeeper.Sessions);
             };
         }
     }

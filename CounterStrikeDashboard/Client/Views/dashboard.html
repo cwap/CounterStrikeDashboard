@@ -1,75 +1,33 @@
 ﻿<h1>Dashboard</h1>
 State: {{state}}
-<h2>Current round</h2>
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Player</th>
-            <th>Kills</th>
-            <th>Ping</th>
-            <th>IP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="player in currentScoreTable">
-            <td>{{$index + 1}}</td>
-            <td>{{player.name}}</td>
-            <td>{{player.kills}}</td>
-            <td>{{player.ping}}</td>
-            <td>{{player.ip}}</td>
-        </tr>
-    </tbody>
-</table>
-
-<h2>Total</h2>
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Player</th>
-            <th>Kills</th>
-            <th>Ping</th>
-            <th>IP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="player in totalScoreTable">
-            <td>{{$index + 1}}</td>
-            <td>{{player.name}}</td>
-            <td>{{player.kills}}</td>
-            <td>{{player.deaths}}</td>
-            <td>{{player.ping}}</td>
-            <td>{{player.ip}}</td>
-        </tr>
-    </tbody>
-</table>
-
-<!--<script type="text/javascript">
-        $(function () {
-            // Declare a proxy to reference the hub. 
-            var chat = $.connection.chatHub;
-            // Create a function that the hub can call to broadcast messages.
-            chat.client.broadcastMessage = function (name, message) {
-                // Html encode display name and message. 
-                var encodedName = $('<div />').text(name).html();
-                var encodedMsg = $('<div />').text(message).html();
-                // Add the message to the page. 
-                $('#discussion').append('<li><strong>' + encodedName
-                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
-            };
-            // Get the user name and store it to prepend to messages.
-            $('#displayname').val("asd");
-            // Set initial focus to message input box.  
-            $('#message').focus();
-            // Start the connection.
-            $.connection.hub.start().done(function () {
-                $('#sendmessage').click(function () {
-                    // Call the Send method on the hub. 
-                    chat.server.send($('#displayname').val(), $('#message').val());
-                    // Clear text box and reset focus for next comment. 
-                    $('#message').val('').focus();
-                });
-            });
-        });
-    </script>-->
+<div>
+    Events:
+    <p ng-repeat="event in dashboard.events">{{event}}</p>
+</div>
+<h2>Sessions</h2>
+<div ng-repeat="session in sessions">
+    <div ng-repeat="map in session.maps">
+        Map: {{map.mapName}}
+        <div ng-repeat="team in map.teams">{{team.team}}: {{team.score}}</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Kills</th>
+                    <th>Deaths</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="player in map.players">
+                    <td>{{$index + 1}}</td>
+                    <td>{{player.name}}</td>
+                    <td>{{player.kills}}</td>
+                    <td>{{player.deaths}}</td>
+                    <td>{{player.team}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
