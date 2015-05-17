@@ -3,26 +3,38 @@
 
     export class EventHub extends HubBase {
 
-        private _newEventListeners: Array<NewEventListenerFunc>;
+        public static $inject = ['scoreService'];
 
-        constructor() {
+        private _scoreService;
+
+        constructor(private scoreService: ScoreService) {
             super("eventHub");
 
-            this._newEventListeners = [];
+            this._scoreService = scoreService;
 
-            this.hub.client.lol = (msg) => {
-                for (var i = 0; i < this._newEventListeners.length; i++) {
-                    this._newEventListeners[i](msg);
-                }
+            this.hub.client.controlReset = () => {
+                this._scoreService.reset();
+            }
+
+            this.hub.client.roundEnded = (dt, winner) => {
+
+            }
+
+            this.hub.client.newMapStarted = (dt, map) => {
+
+            }
+
+            this.hub.client.joinedTeam = (dt, playerUid, playerName, team) => {
+
+            }
+
+            this.hub.client.playerAdded = (dt, playerUid, playerName) => {
+
+            }
+
+            this.hub.client.playerKilled = (dt, killerUid, killerName, deadUid, deadName) => {
+                console.log(killerName + " killed " + deadName);
             };
         }
-
-        addNewEventListener(listener: NewEventListenerFunc) {
-            this._newEventListeners.push(listener);
-        }
-    }
-
-    export interface NewEventListenerFunc {
-        (event: string): void;
     }
 }

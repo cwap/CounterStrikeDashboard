@@ -1,9 +1,13 @@
-﻿using CounterStrikeDashboard.Communication;
+﻿using ConsoleTester;
+using CounterStrikeDashboard.Communication;
 using CounterStrikeDashboard.Core;
 using CounterStrikeDashboard.Core.Api;
 using CounterStrikeDashboard.Core.CsEvents;
 using CounterStrikeDashboard.Core.CsEvents.Impl;
+using CounterStrikeDashboard.Core.Infrastructure;
+using CounterStrikeDashboard.Core.Infrastructure.Sinks;
 using CounterStrikeDashboard.Infrastructure;
+using CounterStrikeDashboard.Server.CsEventHandlers;
 using CounterStrikeDashboard.Server.Hubs;
 using Microsoft.AspNet.SignalR;
 using Nancy;
@@ -67,26 +71,26 @@ namespace CounterStrikeDashboard.Server.Bootstrap
             var filesource = new ConsoleTester.FileEventSource();
             var server = new CommunicationServer();
 
-            var eventManager = new EventManager();
+            var eventParser = new EventParser();
+            var eventManager = new EventManager(eventParser, new List<ICsEventSink>() { new ConsoleSink(), new FileSink() });
             var scoreKeeper = new ScoreKeeper(eventManager);
+
+            var webSocketMediator = new WebSocketMediator(eventManager);
 
             var application = new Application(server, eventManager);
             application.Start();
 
             filesource.OnNewEvent += eventManager.HandleEvent;
 
-            eventManager.KillEvent.OnPlayerKilled += new Action<DateTime, string, string, string, string>((dt, kUid, kName, dUid, dName) =>
-                {
-                    GlobalHost.ConnectionManager.GetHubContext<EventHub>().Clients.All.lol(String.Format("{0}: {1} killed {2}", dt, kName, dName)); ;
-                });
-
             container.Register<IEventManager>(eventManager);
             container.Register<ScoreKeeper>(scoreKeeper);
-
-            filesource.Run();           
+            container.Register<WebSocketMediator>(webSocketMediator);
+            container.Register<Application>(application);
+            container.Register<FileEventSource>(filesource); // TODO - Remove and clean up
 
             base.ApplicationStartup(container, pipelines);
 
+            filesource.Run();
         }
     }
 }

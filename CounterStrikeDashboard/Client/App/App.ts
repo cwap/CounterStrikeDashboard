@@ -6,6 +6,8 @@
         .controller('dashboardController', DashboardController)
         .controller('configurationController', ConfigurationController)
         .service('hubService', HubService)
+        .service('scoreService', ScoreService)
+        .service('controlService', ControlService)
         .service('eventHub', EventHub);
    
     csDashApp.config(function ($routeProvider) {

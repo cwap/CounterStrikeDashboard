@@ -3,6 +3,6 @@
         private __name__ = "TeamTuple";
 
         team: string;
-        score: number = 0;   
+        score: number = 0;
     }
 }

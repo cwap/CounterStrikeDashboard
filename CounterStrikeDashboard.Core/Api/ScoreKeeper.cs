@@ -24,6 +24,13 @@ namespace CounterStrikeDashboard.Core.Api
             _eventManager.KillEvent.OnPlayerKilled += new Action<DateTime, string, string, string, string>((dt, kUid, kName, dUid, dName) => ApplyKill(kUid, kName, dUid, dName));
             _eventManager.MapStartedEvent.OnNewMapStarted += new Action<DateTime, string>((dt, map) => StartNewMap(map));
             _eventManager.RoundWinEvent.OnRoundEnded += new Action<DateTime, string>((dt, winner) => EndRound(winner));
+            _eventManager.ControlEvents.OnControlReset += OnControlReset;
+        }
+
+        void OnControlReset()
+        {
+            _sessions = new List<Session>();
+            _sessions.Add(new Session());
         }
 
         public Session CurrentSession

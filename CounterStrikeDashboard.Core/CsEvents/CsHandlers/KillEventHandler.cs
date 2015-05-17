@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CounterStrikeDashboard.Core.CsEvents.Handlers
+namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 {
     public class KillEventHandler : ICsEventHandler
     {

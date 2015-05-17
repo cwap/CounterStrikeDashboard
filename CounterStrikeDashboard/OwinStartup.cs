@@ -27,7 +27,7 @@ namespace CounterStrikeDashboard
             app.UseNancy(new Nancy.Owin.NancyOptions()
                 {
                     Bootstrapper = new NancyBootstrapper(container)
-                });            
+                });
         }
     }
 }

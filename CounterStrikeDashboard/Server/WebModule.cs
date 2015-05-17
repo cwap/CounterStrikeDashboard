@@ -1,4 +1,5 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿using CounterStrikeDashboard.Core;
+using CounterStrikeDashboard.Core.Api;
 using CounterStrikeDashboard.Infrastructure;
 using CounterStrikeDashboard.Server.Hubs;
 using Microsoft.AspNet.SignalR;
@@ -13,7 +14,7 @@ namespace CounterStrikeDashboard.Server
 {
     public class WebModule : NancyModule
     {
-        public WebModule(ScoreKeeper scoreKeeper, EventHub eventHub)
+        public WebModule(Application application, ScoreKeeper scoreKeeper, ConsoleTester.FileEventSource filesource) // TODO: Remove file eventsource
         {            
             Get["/"] = p =>
             {
@@ -23,6 +24,13 @@ namespace CounterStrikeDashboard.Server
             Get["/sessions"] = p =>
             {
                 return Response.AsJson(scoreKeeper.Sessions);
+            };
+
+            Post["/sessions/reset"] = p =>
+            {
+                application.Reset();
+                filesource.Run();
+                return HttpStatusCode.OK;
             };
         }
     }

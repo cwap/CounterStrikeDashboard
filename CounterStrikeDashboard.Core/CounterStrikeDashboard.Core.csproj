@@ -46,24 +46,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="CsEvents\ControlEvents\ControlEventsHandler.cs" />
     <Compile Include="Infrastructure\ICounterStrikeCommunicationServer.cs" />
     <Compile Include="Infrastructure\ICsEventSink.cs" />
     <Compile Include="Infrastructure\ICsEventSource.cs" />
     <Compile Include="Infrastructure\Sinks\ConsoleSink.cs" />
+    <Compile Include="Infrastructure\Sinks\FileSink.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\PlayerTuple.cs" />
     <Compile Include="Model\Map.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Model\TeamTuple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CsEvents\Handlers\DefusedBombEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\IEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\JoinedTeamEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\KillEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\MapStartedEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\PlantedTheBombEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\StartedDefuseBombEventHandler.cs" />
-    <Compile Include="CsEvents\Handlers\RoundWinEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\DefusedBombEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\IEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\JoinedTeamEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\KillEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\MapStartedEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\PlantedTheBombEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\StartedDefuseBombEventHandler.cs" />
+    <Compile Include="CsEvents\CsHandlers\RoundWinEventHandler.cs" />
     <Compile Include="CsEvents\IEventManager.cs" />
     <Compile Include="CsEvents\IEventParser.cs" />
     <Compile Include="CsEvents\Impl\EventManager.cs" />

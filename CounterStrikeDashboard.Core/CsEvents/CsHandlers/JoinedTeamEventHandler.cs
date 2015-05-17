@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CounterStrikeDashboard.Core.CsEvents.Handlers
+namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 {
     public class JoinedTeamEventHandler : ICsEventHandler
     {
@@ -35,7 +35,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.Handlers
                 OnJoinedTeam(evt.DateTime, playerUid, playerName, teamString == "TERRORIST" ? "T" : "CT");
         }
 
-        public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)
+        public bool Matches(ParsedEvent evt)
         {
             return evt.Event.Contains(EVENT_STRING);
         }

@@ -31,5 +31,10 @@ namespace CounterStrikeDashboard.Core
         {
             CounterStrikeCommunicationServer.Start(27115);
         }
+
+        public void Reset()
+        {
+            EventManager.SendResetEvent();
+        }
     }
 }

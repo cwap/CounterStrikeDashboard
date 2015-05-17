@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CounterStrikeDashboard.Core.CsEvents.Handlers
+namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 {
     public class MapStartedEventHandler : ICsEventHandler
     {

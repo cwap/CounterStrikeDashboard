@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CounterStrikeDashboard.Core.CsEvents.Handlers
+namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 {
-    public class PlantedTheBombEventHandler : ICsEventHandler
+    public class StartedDefuseBombEventHandler : ICsEventHandler
     {
         public void Execute(Impl.EventParserHelpers.ParsedEvent evt)
         {

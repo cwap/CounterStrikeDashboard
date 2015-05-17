@@ -1,0 +1,49 @@
+OUTSIDE OF GAME
+????log L 05/14/2015 - 16:24:28: Server shutdown
+????log L 05/14/2015 - 16:24:28: Loading map "de_falling"
+????log L 05/14/2015 - 16:24:29: Started map "de_falling2" (CRC "875406954")
+????log L 05/14/2015 - 16:04:15: World triggered "Game_Commencing"
+????log L 05/14/2015 - 16:04:15: World triggered "Game_Commencing" (CT "0") (T "0")
+
+IN GAME
+????log L 05/14/2015 - 16:04:37: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "sg552"
+????log L 05/17/2015 - 20:18:50: "cwap<1><4294967295><TERRORIST>" committed suicide with "world"
+
+PLAYERS
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><>" entered the game
+????log L 05/17/2015 - 20:15:53: "cwap<1><4294967295><CT>" disconnected
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><>" joined team "TERRORIST"
+????log L 05/17/2015 - 20:16:32: "cwap<1><4294967295><CT>" changed name to "cwapp"
+
+ENVIRONMENT
+????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><CT>" triggered "Touched_A_Hostage"
+????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><CT>" triggered "Rescued_A_Hostage"
+????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><TERRORIST>" triggered "Killed_A_Hostage"
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+????log L 05/14/2015 - 16:04:48: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+????log L 05/14/2015 - 16:05:05: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Got_The_Bomb"
+????log L 05/14/2015 - 16:14:57: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Planted_The_Bomb"
+????log L 05/14/2015 - 16:20:29: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Begin_Bomb_Defuse_With_Kit" <----- TODO: MANGLER Without Kit
+????log L 05/14/2015 - 16:20:34: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Defused_The_Bomb"
+
+WIN CONDITIONS
+????log L 05/14/2015 - 16:06:35: Team "TERRORIST" triggered "Target_Bombed" (CT "0") (T "1")
+????log L 05/14/2015 - 16:07:45: Team "TERRORIST" triggered "Terrorists_Win" (CT "0") (T "2")
+????log L 05/14/2015 - 16:08:39: Team "CT" triggered "CTs_Win" (CT "1") (T "2")
+????log L 05/14/2015 - 16:20:34: Team "CT" triggered "Bomb_Defused" (CT "11") (T "4")
+????log L 05/14/2015 - 16:34:35: Team "CT" triggered "Target_Saved" (CT "2") (T "0")
+????log L 05/17/2015 - 20:15:53: World triggered "Round_Draw" (CT "0") (T "0")
+????log L 05/14/2015 - 16:07:45: Team "TERRORIST" triggered "Hostages_Not_Rescued" (CT "0") (T "2")
+????log L 05/14/2015 - 16:34:35: Team "CT" triggered "All_Hostages_Rescued" (CT "2") (T "0")
+
+????log L 05/14/2015 - 16:04:07: World triggered "Round_Start"
+????log L 05/14/2015 - 16:04:15: World triggered "Round_End"
+
+MAP END
+????log L 05/14/2015 - 16:24:18: Team "CT" scored "15" with "4" players
+????log L 05/14/2015 - 16:24:18: Team "TERRORIST" scored "4" with "3" players
+
+
+
+ERRORS:
+Change team: "????log L 05/17/2015 - 20:18:50: \"cwap<1><4294967295><TERRORIST>\" joined team \"CT\"\n\0"

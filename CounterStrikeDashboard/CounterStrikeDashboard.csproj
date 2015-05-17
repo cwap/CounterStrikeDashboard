@@ -110,6 +110,7 @@
     <Compile Include="Server\Bootstrap\CustomJsonSerializer.cs" />
     <Compile Include="Server\Bootstrap\SignalRErrorHandler.cs" />
     <Compile Include="Server\Bootstrap\TinyIoCDependencyResolver.cs" />
+    <Compile Include="Server\CsEventHandlers\WebSocketMediator.cs" />
     <Compile Include="Server\Hubs\EventHub.cs" />
     <Compile Include="Server\Bootstrap\NancyBootstrapper.cs" />
     <Compile Include="Server\Persistence\CounterStrikeEvent.cs" />
@@ -329,6 +330,8 @@
     <TypeScriptCompile Include="Client\App\Models\Map.ts" />
     <TypeScriptCompile Include="Client\App\Models\TeamTuple.ts" />
     <TypeScriptCompile Include="Client\App\Common\Serializer.ts" />
+    <TypeScriptCompile Include="Client\App\Services\ScoreService.ts" />
+    <TypeScriptCompile Include="Client\App\Services\ControlService.ts" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />

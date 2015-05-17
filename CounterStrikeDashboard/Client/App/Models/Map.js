@@ -8,6 +8,13 @@
             this.players = [];
             this.teams = [];
             this.active = false;
+            this.teams = new Array();
+            var ct = new csdash.TeamTuple();
+            ct.team = "CT";
+            this.teams.push(ct);
+            var t = new csdash.TeamTuple();
+            t.team = "T";
+            this.teams.push(t);
         }
         return Map;
     })();

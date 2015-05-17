@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CounterStrikeDashboard.Core.CsEvents.Handlers
+namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 {
-    public class StartedDefuseBombEventHandler : ICsEventHandler
+    public class DefusedBombEventHandler : ICsEventHandler
     {
+        //Template: 
+
         public void Execute(Impl.EventParserHelpers.ParsedEvent evt)
         {
             throw new NotImplementedException();
@@ -16,7 +18,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.Handlers
 
         public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿var csdash;
 (function (csdash) {
     var AppController = (function () {
-        function AppController($scope, $route, hubService) {
+        function AppController($scope, $route, hubService, eventHub) {
             this.$scope = $scope;
             this.$route = $route;
             this.hubService = hubService;
+            this.eventHub = eventHub;
             this.fixScope = function ($scope) {
                 if (!$scope.hub) {
                     $scope.hub = [];
@@ -22,12 +23,20 @@
             this.fixScope($scope);
 
             $scope.$route = $route;
-            hubService.start();
+
+            $scope.hub.state = 1 /* Connecting */;
+
+            // Weird race condition when starting signalr hubs
+            // http://stackoverflow.com/a/16973824/2372835
+            setTimeout(function () {
+                hubService.start();
+            }, 700);
         }
         AppController.$inject = [
             '$scope',
             '$route',
-            'hubService'
+            'hubService',
+            'eventHub'
         ];
         return AppController;
     })();

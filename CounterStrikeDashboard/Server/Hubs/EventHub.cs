@@ -10,9 +10,9 @@ namespace CounterStrikeDashboard.Server.Hubs
 {
     public class EventHub : Hub
     {
-        public void Lol(string msg)
+        public void PlayerKilled(string killer, string deadperson)
         {
-            this.Clients.All.lol(msg);
+            this.Clients.All.PlayerKilled(killer, deadperson);
         }
     }
 }

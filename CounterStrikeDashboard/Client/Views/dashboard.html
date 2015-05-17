@@ -1,11 +1,14 @@
 ﻿<h1>Dashboard</h1>
+<button ng-click="reset()">Reset</button>
+<button ng-click="doStuff()">Do stuff</button>
 State: {{state}}
 <div>
     Events:
     <p ng-repeat="event in dashboard.events">{{event}}</p>
 </div>
 <h2>Sessions</h2>
-<div ng-repeat="session in sessions">
+
+<div ng-repeat="session in getSessions()">
     <div ng-repeat="map in session.maps">
         Map: {{map.mapName}}
         <div ng-repeat="team in map.teams">{{team.team}}: {{team.score}}</div>
