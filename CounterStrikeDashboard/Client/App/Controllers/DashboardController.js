@@ -1,11 +1,11 @@
 ﻿var csdash;
 (function (csdash) {
     var DashboardController = (function () {
-        function DashboardController($scope, scoreService, controlService) {
+        function DashboardController($scope, controlService, eventHub) {
             var _this = this;
             this.$scope = $scope;
-            this.scoreService = scoreService;
             this.controlService = controlService;
+            this.eventHub = eventHub;
             this.fixScope = function ($scope) {
                 if (!$scope.scores) {
                     $scope.scores = {};
@@ -19,7 +19,9 @@
                     $scope.dashboard.events = [];
                 }
 
-                $scope.getSessions = _this.scoreService.getSessions;
+                $scope.getScoreboard = function () {
+                    return _this.eventHub.scoreboard;
+                };
                 $scope.reset = _this.controlService.reset;
                 $scope.doStuff = _this.doStuff;
             };
@@ -30,8 +32,8 @@
         }
         DashboardController.$inject = [
             '$scope',
-            'scoreService',
-            'controlService'
+            'controlService',
+            'eventHub'
         ];
         return DashboardController;
     })();

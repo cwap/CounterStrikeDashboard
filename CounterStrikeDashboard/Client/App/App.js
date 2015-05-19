@@ -2,7 +2,7 @@
 (function (csdash) {
     'use strict';
 
-    var csDashApp = angular.module('csDashApp', ['ngRoute']).controller('appController', csdash.AppController).controller('dashboardController', csdash.DashboardController).controller('configurationController', csdash.ConfigurationController).service('hubService', csdash.HubService).service('scoreService', csdash.ScoreService).service('controlService', csdash.ControlService).service('eventHub', csdash.EventHub);
+    var csDashApp = angular.module('csDashApp', ['ngRoute']).controller('appController', csdash.AppController).controller('dashboardController', csdash.DashboardController).controller('configurationController', csdash.ConfigurationController).service('hubService', csdash.HubService).service('controlService', csdash.ControlService).service('eventHub', csdash.EventHub);
 
     csDashApp.config(function ($routeProvider) {
         $routeProvider.when('/', {

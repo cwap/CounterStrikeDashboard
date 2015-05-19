@@ -2,7 +2,6 @@
 (function (csdash) {
     var EventBase = (function () {
         function EventBase() {
-            this.__name__ = "EventBase";
         }
         return EventBase;
     })();

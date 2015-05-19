@@ -1,0 +1,480 @@
+????log L 05/14/2015 - 16:24:29: Started map "de_falling2" (CRC "875406954")
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_welcomemsgs" = "0"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_usespeech" = "0"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_maxbots" = "16"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_bot_quota_match" = "0"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_timer_sound" = "0.5"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_numfollowuser" = "5"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_minbotskill" = "95"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_maxweaponpickup" = "10"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_autokill" = "0"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_autokilldelay" = "45"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "pb_detailnames" = "1"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "sv_aim" = "0.000000"
+ 
+????log L 05/14/2015 - 16:04:05: Server cvar "sv_aim" = "0"
+ 
+????log L 05/14/2015 - 16:04:07: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><>" joined team "TERRORIST"
+ 
+????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:04:15: "[P*D]DaTa (100)<2><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:15: "[P*D]DaTa (100)<2><BOT><>" joined team "CT"
+ 
+????log L 05/14/2015 - 16:04:15: World triggered "Game_Commencing"
+ 
+????log L 05/14/2015 - 16:04:15: World triggered "Game_Commencing" (CT "0") (T "0")
+ 
+????log L 05/14/2015 - 16:04:15: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:04:16: "[P*D]Chris_Rock (100)<3><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:16: "[P*D]Chris_Rock (100)<3><BOT><>" joined team "TERRORIST"
+ 
+????log L 05/14/2015 - 16:04:16: "[P*D]Funky Byte (100)<4><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:16: "[P*D]Funky Byte (100)<4><BOT><>" joined team "CT"
+ 
+????log L 05/14/2015 - 16:04:17: "[POD]Fuzzy Logic (100)<5><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:17: "[POD]Fuzzy Logic (100)<5><BOT><>" joined team "CT"
+ 
+????log L 05/14/2015 - 16:04:17: "[P0D]Andrew_Dice_Clay (100)<6><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:17: "[P0D]Andrew_Dice_Clay (100)<6><BOT><>" joined team "TERRORIST"
+ 
+????log L 05/14/2015 - 16:04:18: "[POD]Pissed Off (100)<7><BOT><>" entered the game
+ 
+????log L 05/14/2015 - 16:04:18: "[POD]Pissed Off (100)<7><BOT><>" joined team "CT"
+ 
+????log L 05/14/2015 - 16:04:18: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:04:18: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:04:37: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:04:48: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:04:48: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:05:03: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:05:05: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Got_The_Bomb"
+ 
+????log L 05/14/2015 - 16:05:08: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:05:08: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:05:23: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Got_The_Bomb"
+ 
+????log L 05/14/2015 - 16:05:27: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[P*D]Funky Byte (100)<4><BOT><CT>" with "awp"
+ 
+????log L 05/14/2015 - 16:05:50: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Planted_The_Bomb"
+ 
+????log L 05/14/2015 - 16:06:02: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:06:35: Team "TERRORIST" triggered "Target_Bombed" (CT "0") (T "1")
+ 
+????log L 05/14/2015 - 16:06:35: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:06:40: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:06:40: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:07:06: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:07:21: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:07:21: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:07:23: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:07:24: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Got_The_Bomb"
+ 
+????log L 05/14/2015 - 16:07:27: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[P*D]Funky Byte (100)<4><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:07:28: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:07:45: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:07:45: Team "TERRORIST" triggered "Terrorists_Win" (CT "0") (T "2")
+ 
+????log L 05/14/2015 - 16:07:45: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:07:50: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:07:50: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:08:19: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "scout"
+ 
+????log L 05/14/2015 - 16:08:19: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:08:20: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:08:21: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:08:29: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "g3sg1"
+ 
+????log L 05/14/2015 - 16:08:32: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Got_The_Bomb"
+ 
+????log L 05/14/2015 - 16:08:33: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "g3sg1"
+ 
+????log L 05/14/2015 - 16:08:39: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "usp"
+ 
+????log L 05/14/2015 - 16:08:39: Team "CT" triggered "CTs_Win" (CT "1") (T "2")
+ 
+????log L 05/14/2015 - 16:08:39: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:08:44: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:08:44: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:09:04: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:09:09: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:09:10: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:09:13: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]Funky Byte (100)<4><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:09:13: Team "TERRORIST" triggered "Terrorists_Win" (CT "1") (T "3")
+ 
+????log L 05/14/2015 - 16:09:13: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:09:18: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:09:18: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:09:45: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:10:20: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:10:31: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "scout"
+ 
+????log L 05/14/2015 - 16:10:34: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:10:43: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:10:43: Team "CT" triggered "CTs_Win" (CT "2") (T "3")
+ 
+????log L 05/14/2015 - 16:10:43: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:10:48: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:10:48: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:11:11: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:11:11: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:11:19: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:11:37: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:11:37: Team "CT" triggered "CTs_Win" (CT "3") (T "3")
+ 
+????log L 05/14/2015 - 16:11:37: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:11:42: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:11:42: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:12:12: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:12:12: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:12:12: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:12:14: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "sg552"
+ 
+????log L 05/14/2015 - 16:12:49: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Got_The_Bomb"
+ 
+????log L 05/14/2015 - 16:13:04: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:13:22: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:13:22: Team "CT" triggered "CTs_Win" (CT "4") (T "3")
+ 
+????log L 05/14/2015 - 16:13:22: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:13:27: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:13:27: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:13:51: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:13:53: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:13:57: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:13:57: Team "CT" triggered "CTs_Win" (CT "5") (T "3")
+ 
+????log L 05/14/2015 - 16:13:57: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:14:02: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:14:02: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:14:27: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:14:29: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "scout"
+ 
+????log L 05/14/2015 - 16:14:40: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:14:57: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Planted_The_Bomb"
+ 
+????log L 05/14/2015 - 16:15:09: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:15:10: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]Funky Byte (100)<4><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:15:15: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:15:15: Team "TERRORIST" triggered "Terrorists_Win" (CT "5") (T "4")
+ 
+????log L 05/14/2015 - 16:15:15: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:15:20: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:15:20: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:15:43: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:15:43: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:15:45: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:15:46: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:15:55: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:15:55: Team "CT" triggered "CTs_Win" (CT "6") (T "4")
+ 
+????log L 05/14/2015 - 16:15:55: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:16:00: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:16:00: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:16:19: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "usp"
+ 
+????log L 05/14/2015 - 16:16:26: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:16:26: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:16:26: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:16:30: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:16:30: Team "CT" triggered "CTs_Win" (CT "7") (T "4")
+ 
+????log L 05/14/2015 - 16:16:30: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:16:35: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:16:35: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:16:56: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "knife"
+ 
+????log L 05/14/2015 - 16:17:03: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:17:03: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:17:06: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:17:07: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:18:12: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:18:12: Team "CT" triggered "CTs_Win" (CT "8") (T "4")
+ 
+????log L 05/14/2015 - 16:18:12: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:18:17: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:18:17: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:18:41: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:18:41: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:18:41: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:18:44: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:18:53: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:18:53: Team "CT" triggered "CTs_Win" (CT "9") (T "4")
+ 
+????log L 05/14/2015 - 16:18:53: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:18:58: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:18:58: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:19:24: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:19:24: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:19:30: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:19:30: Team "CT" triggered "CTs_Win" (CT "10") (T "4")
+ 
+????log L 05/14/2015 - 16:19:30: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:19:35: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:19:35: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:20:04: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "aug"
+ 
+????log L 05/14/2015 - 16:20:06: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:20:10: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Fuzzy Logic (100)<5><BOT><CT>" with "grenade"
+ 
+????log L 05/14/2015 - 16:20:18: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Planted_The_Bomb"
+ 
+????log L 05/14/2015 - 16:20:20: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "usp"
+ 
+????log L 05/14/2015 - 16:20:29: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" killed "[P*D]Funky Byte (100)<4><BOT><CT>" with "awp"
+ 
+????log L 05/14/2015 - 16:20:29: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Begin_Bomb_Defuse_With_Kit"
+ 
+????log L 05/14/2015 - 16:20:34: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Defused_The_Bomb"
+ 
+????log L 05/14/2015 - 16:20:34: Team "CT" triggered "Bomb_Defused" (CT "11") (T "4")
+ 
+????log L 05/14/2015 - 16:20:34: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:20:39: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:20:39: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:21:04: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "xm1014"
+ 
+????log L 05/14/2015 - 16:21:11: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:21:17: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:21:20: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:21:20: Team "CT" triggered "CTs_Win" (CT "12") (T "4")
+ 
+????log L 05/14/2015 - 16:21:20: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:21:25: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:21:25: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:21:59: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:22:10: "[P*D]Funky Byte (100)<4><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:22:11: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:22:11: Team "CT" triggered "CTs_Win" (CT "13") (T "4")
+ 
+????log L 05/14/2015 - 16:22:11: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:22:16: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:22:16: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:22:37: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:22:40: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:22:40: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:22:57: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:22:57: Team "CT" triggered "CTs_Win" (CT "14") (T "4")
+ 
+????log L 05/14/2015 - 16:22:57: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:23:02: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:23:02: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:23:20: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:23:25: "[POD]Pissed Off (100)<7><BOT><CT>" killed "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:23:25: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:23:33: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:23:33: Team "CT" triggered "CTs_Win" (CT "15") (T "4")
+ 
+????log L 05/14/2015 - 16:23:33: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:23:38: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
+ 
+????log L 05/14/2015 - 16:23:38: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:23:59: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "ak47"
+ 
+????log L 05/14/2015 - 16:24:05: "[P*D]DaTa (100)<2><BOT><CT>" killed "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" with "m4a1"
+ 
+????log L 05/14/2015 - 16:24:07: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[P*D]DaTa (100)<2><BOT><CT>" with "sg552"
+ 
+????log L 05/14/2015 - 16:24:16: "[POD]Fuzzy Logic (100)<5><BOT><CT>" killed "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" with "awp"
+ 
+????log L 05/14/2015 - 16:24:16: "[P0D]Andrew_Dice_Clay (100)<6><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
+ 
+????log L 05/14/2015 - 16:24:18: Team "CT" scored "15" with "4" players
+ 
+????log L 05/14/2015 - 16:24:18: Team "TERRORIST" scored "4" with "3" players
+ 
+????log L 05/14/2015 - 16:24:28: [META] ini: Begin re-reading plugins list: c:/games/half-life server/cstrike/addons/metamod/plugins.ini
+ 
+????log L 05/14/2015 - 16:24:28: [META] ini: Read plugin config for: POD-Bot mm
+ 
+????log L 05/14/2015 - 16:24:28: [META] ini: Finished reading plugins list: c:/games/half-life server/cstrike/addons/metamod/plugins.ini; Found 1 plugins
+ 
+????log L 05/14/2015 - 16:24:28: [META] dll: Updating plugins...
+ 
+????log L 05/14/2015 - 16:24:28: [META] dll: Finished updating 1 plugins; kept 1, loaded 0, unloaded 0, reloaded 0, delayed 0
+ 
+????log L 05/14/2015 - 16:24:28: Loading map "de_falling"
+ 
+????log L 05/14/2015 - 16:24:29: Server cvar "sv_maxspeed" = "900"
+ 
+????log L 05/14/2015 - 16:24:29: Server cvar "mp_timelimit" = "5.000000"
+ 
+????log L 05/14/2015 - 16:24:29: Started map "de_falling" (CRC "875406954")
+ 
+????log L 05/14/2015 - 16:24:29: Server cvar "sv_maxspeed" = "320"
+ 
+????log L 05/14/2015 - 16:24:29: Server cvar "mp_timelimit" = "20"
+ 
+????log L 05/14/2015 - 16:24:30: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:29:30: Team "CT" triggered "Target_Saved" (CT "1") (T "0")
+ 
+????log L 05/14/2015 - 16:29:30: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:29:35: World triggered "Round_Start"
+ 
+????log L 05/14/2015 - 16:34:35: Team "CT" triggered "Target_Saved" (CT "2") (T "0")
+ 
+????log L 05/14/2015 - 16:34:35: World triggered "Round_End"
+ 
+????log L 05/14/2015 - 16:34:40: World triggered "Round_Start"
+ 

@@ -1,36 +1,36 @@
 ﻿<h1>Dashboard</h1>
 <button ng-click="reset()">Reset</button>
 <button ng-click="doStuff()">Do stuff</button>
-State: {{state}}
-<div>
-    Events:
-    <p ng-repeat="event in dashboard.events">{{event}}</p>
-</div>
-<h2>Sessions</h2>
 
-<div ng-repeat="session in getSessions()">
-    <div ng-repeat="map in session.maps">
-        Map: {{map.mapName}}
+<div ng-repeat="mapScoreboard in getScoreboard().mapScoreboards">
+    <h2>Map</h2>
+    Mapname: {{mapScoreboard.map}}
+    T: {{mapScoreboard.tScore}}
+    CT: {{mapScoreboard.ctScore}}
+    <div ng-repeat="session in getScoreboard()">
+        <div ng-repeat="map in session.maps">
+            Map: {{map.mapName}}
         <div ng-repeat="team in map.teams">{{team.team}}: {{team.score}}</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Player</th>
-                    <th>Kills</th>
-                    <th>Deaths</th>
-                    <th>Teams</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="player in map.players">
-                    <td>{{$index + 1}}</td>
-                    <td>{{player.name}}</td>
-                    <td>{{player.kills}}</td>
-                    <td>{{player.deaths}}</td>
-                    <td>{{player.team}}</td>
-                </tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player</th>
+                        <th>Kills</th>
+                        <th>Deaths</th>
+                        <th>Teams</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="player in map.players">
+                        <td>{{$index + 1}}</td>
+                        <td>{{player.name}}</td>
+                        <td>{{player.kills}}</td>
+                        <td>{{player.deaths}}</td>
+                        <td>{{player.team}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

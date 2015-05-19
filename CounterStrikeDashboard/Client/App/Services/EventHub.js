@@ -10,27 +10,33 @@ var csdash;
 
     var EventHub = (function (_super) {
         __extends(EventHub, _super);
-        function EventHub(scoreService) {
+        function EventHub() {
             var _this = this;
             _super.call(this, "eventHub");
-            this.scoreService = scoreService;
+            this.getScoreboard = function () {
+                return _this.scoreboard;
+            };
 
-            this._scoreService = scoreService;
+            this.scoreboard = new csdash.Scoreboard();
 
             this.hub.client.controlReset = function () {
-                _this._scoreService.reset();
+                console.log("control reset");
             };
 
             this.hub.client.roundEnded = function (dt, winner) {
+                _this.scoreboard.roundWon(winner);
             };
 
             this.hub.client.newMapStarted = function (dt, map) {
+                _this.scoreboard.startNewMap(map);
             };
 
             this.hub.client.joinedTeam = function (dt, playerUid, playerName, team) {
+                _this.scoreboard.changePlayerTeam(playerUid, team);
             };
 
             this.hub.client.playerAdded = function (dt, playerUid, playerName) {
+                console.log("player added. name: " + playerName);
             };
 
             this.hub.client.playerKilled = function (evt) {
@@ -38,7 +44,7 @@ var csdash;
                 var obj = csdash.Serializer.deserializeObj(evt);
             };
         }
-        EventHub.$inject = ['scoreService'];
+        EventHub.$inject = [];
         return EventHub;
     })(csdash.HubBase);
     csdash.EventHub = EventHub;

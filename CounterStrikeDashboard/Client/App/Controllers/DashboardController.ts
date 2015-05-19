@@ -3,11 +3,11 @@
 
         public static $inject = [
             '$scope',
-            'scoreService',
             'controlService',
+            'eventHub',
         ];
 
-        constructor(private $scope: any, private scoreService: ScoreService, private controlService: ControlService) {
+        constructor(private $scope: any, private controlService: ControlService, private eventHub: EventHub) {
             this.fixScope($scope);                      
         }
 
@@ -24,7 +24,9 @@
                 $scope.dashboard.events = [];
             }
 
-            $scope.getSessions = this.scoreService.getSessions;  
+            $scope.getScoreboard = () => {
+                return this.eventHub.scoreboard;
+            };
             $scope.reset = this.controlService.reset;
             $scope.doStuff = this.doStuff;
         }

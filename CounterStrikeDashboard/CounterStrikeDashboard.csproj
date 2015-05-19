@@ -322,20 +322,19 @@
     <None Include="Client\Content\signalr\jquery.signalR.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <TypeScriptCompile Include="Client\App\Models\PlayerTuple.ts" />
     <TypeScriptCompile Include="Client\App\Services\EventHub.ts" />
     <TypeScriptCompile Include="Client\App\Services\HubBase.ts" />
     <TypeScriptCompile Include="Client\App\Controllers\AppController.ts" />
     <TypeScriptCompile Include="Client\App\Services\HubService.ts" />
-    <TypeScriptCompile Include="Client\App\Models\Session.ts" />
-    <TypeScriptCompile Include="Client\App\Models\Map.ts" />
-    <TypeScriptCompile Include="Client\App\Models\TeamTuple.ts" />
     <TypeScriptCompile Include="Client\App\Common\Serializer.ts" />
-    <TypeScriptCompile Include="Client\App\Services\ScoreService.ts" />
     <TypeScriptCompile Include="Client\App\Services\ControlService.ts" />
     <TypeScriptCompile Include="Client\App\Models\Events\KillEvent.ts" />
     <TypeScriptCompile Include="Client\App\Models\Events\Models\Player.ts" />
     <TypeScriptCompile Include="Client\App\Models\Events\EventBase.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Scoreboard.ts" />
+    <TypeScriptCompile Include="Client\App\Models\MapScoreboard.ts" />
+    <TypeScriptCompile Include="Client\App\Models\MapScoreRow.ts" />
+    <TypeScriptCompile Include="Client\App\Models\ScoreRowBase.ts" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
