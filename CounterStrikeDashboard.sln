@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterStrikeDashboard", "CounterStrikeDashboard\CounterStrikeDashboard.csproj", "{A3EA63D9-60AA-4C89-AF3D-FA8EAEADD7BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3A149B0-FA8E-4DFB-9BE0-09827F46DFC4}"
 	ProjectSection(SolutionItems) = preProject
-		E:\Half Life\cs logs messages.txt = E:\Half Life\cs logs messages.txt
+		LogMessages.txt = LogMessages.txt
 		WE-settings.xml = WE-settings.xml
 	EndProjectSection
 EndProject

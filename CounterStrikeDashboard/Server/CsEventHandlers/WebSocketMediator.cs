@@ -1,4 +1,5 @@
 ﻿using CounterStrikeDashboard.Core.CsEvents;
+using CounterStrikeDashboard.Core.CsEvents.Events;
 using CounterStrikeDashboard.Server.Hubs;
 using Microsoft.AspNet.SignalR;
 using System;
@@ -37,6 +38,11 @@ namespace CounterStrikeDashboard.Server.CsEventHandlers
             _eventManager.ControlEvents.OnControlReset += ControlEvents_OnControlReset;
         }
 
+        void KillEvent_OnPlayerKilled(KillEvent evt)
+        {
+            HubContext.Clients.All.playerKilled(evt);
+        }
+
         void ControlEvents_OnControlReset()
         {
             HubContext.Clients.All.controlReset();
@@ -60,11 +66,6 @@ namespace CounterStrikeDashboard.Server.CsEventHandlers
         void JoinedTeamEvent_OnPlayerAdded(DateTime arg1, string arg2, string arg3)
         {
             HubContext.Clients.All.playerAdded(arg1, arg2, arg3);
-        }
-
-        void KillEvent_OnPlayerKilled(DateTime arg1, string arg2, string arg3, string arg4, string arg5)
-        {
-            HubContext.Clients.All.playerKilled(arg1, arg2, arg3, arg4, arg5);
         }
     }
 }

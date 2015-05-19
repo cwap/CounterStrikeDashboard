@@ -108,6 +108,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\Bootstrap\CustomJsonSerializer.cs" />
+    <Compile Include="Server\Bootstrap\SignalRContractResolver.cs" />
     <Compile Include="Server\Bootstrap\SignalRErrorHandler.cs" />
     <Compile Include="Server\Bootstrap\TinyIoCDependencyResolver.cs" />
     <Compile Include="Server\CsEventHandlers\WebSocketMediator.cs" />
@@ -332,6 +333,9 @@
     <TypeScriptCompile Include="Client\App\Common\Serializer.ts" />
     <TypeScriptCompile Include="Client\App\Services\ScoreService.ts" />
     <TypeScriptCompile Include="Client\App\Services\ControlService.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\KillEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\Models\Player.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\EventBase.ts" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />

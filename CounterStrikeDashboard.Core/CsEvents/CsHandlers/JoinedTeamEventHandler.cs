@@ -26,8 +26,9 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 
             string playerUid;
             string playerName;
+            string playerTeam;
 
-            PlayerParser.ParsePlayer(playerString, out playerName, out playerUid);
+            PlayerParser.ParsePlayer(playerString, out playerName, out playerUid, out playerTeam);
 
             if (OnPlayerAdded != null)
                 OnPlayerAdded(evt.DateTime, playerUid, playerName);

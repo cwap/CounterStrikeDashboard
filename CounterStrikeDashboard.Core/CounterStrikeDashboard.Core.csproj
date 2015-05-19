@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="CsEvents\ControlEvents\ControlEventsHandler.cs" />
+    <Compile Include="CsEvents\Events\KillEvent.cs" />
+    <Compile Include="CsEvents\Events\Models\EventBase.cs" />
+    <Compile Include="CsEvents\Events\Models\Player.cs" />
     <Compile Include="Infrastructure\ICounterStrikeCommunicationServer.cs" />
     <Compile Include="Infrastructure\ICsEventSink.cs" />
     <Compile Include="Infrastructure\ICsEventSource.cs" />

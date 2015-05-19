@@ -33,8 +33,9 @@ var csdash;
             this.hub.client.playerAdded = function (dt, playerUid, playerName) {
             };
 
-            this.hub.client.playerKilled = function (dt, killerUid, killerName, deadUid, deadName) {
-                console.log(killerName + " killed " + deadName);
+            this.hub.client.playerKilled = function (evt) {
+                console.log("someone died");
+                var obj = csdash.Serializer.deserializeObj(evt);
             };
         }
         EventHub.$inject = ['scoreService'];

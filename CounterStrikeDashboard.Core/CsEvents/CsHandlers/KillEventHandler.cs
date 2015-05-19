@@ -1,5 +1,7 @@
 ﻿using CounterStrikeDashboard.Core.Api;
+using CounterStrikeDashboard.Core.CsEvents.Events;
 using CounterStrikeDashboard.Core.CsEvents.Impl.EventParserHelpers;
+using CounterStrikeDashboard.Core.Services.CsEvents.EventParserHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
     {
         // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" killed "[POD]Pissed Off (100)<7><BOT><CT>" with "ak47"
 
-        public event Action<DateTime, string, string, string, string> OnPlayerKilled;
+        public event Action<KillEvent> OnPlayerKilled;
 
         public bool Matches(ParsedEvent evt)
         {
@@ -27,30 +29,38 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 
             var rightSplitted = splitted[1].Split(new string[] { " with " }, StringSplitOptions.RemoveEmptyEntries);
             var deadManString = rightSplitted[0];
+            string weapon = rightSplitted[1].Substring(1, rightSplitted[1].Length - 2);
 
             string killerName;
             string killerUid;
+            string killerTeam;
 
             string deadManName;
             string deadManUid;
+            string deadManTeam;
 
-            ParsePlayer(killerString, out killerName, out killerUid);
-            ParsePlayer(deadManString, out deadManName, out deadManUid);
+            PlayerParser.ParsePlayer(killerString, out killerName, out killerUid, out killerTeam);
+            PlayerParser.ParsePlayer(deadManString, out deadManName, out deadManUid, out deadManTeam);
 
             if (OnPlayerKilled != null)
-                OnPlayerKilled(evt.DateTime, killerUid, killerName, deadManUid, deadManName);
-        }
-
-        private void ParsePlayer(string playerString, out string player, out string uid)
-        {
-            // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>"
-            var playerRegex = new Regex("\".*?<");
-            var almostPlayerName = playerRegex.Match(playerString).Value;
-            player = almostPlayerName.Substring(1, almostPlayerName.Length - 2);
-
-            var uidRegex = new Regex("<.*?>");
-            var almostPlayerUid = uidRegex.Matches(playerString)[1].Value;
-            uid = almostPlayerUid.Substring(1, almostPlayerUid.Length - 2);
+                OnPlayerKilled(new KillEvent()
+                    {
+                        EventTime = evt.DateTime,
+                        OriginalEvent = evt.Event,
+                        Killer = new Player()
+                        {
+                            Name = killerName,
+                            Team = killerTeam,
+                            Uid = killerUid
+                        },
+                        Dead = new Player()
+                        {
+                            Name = deadManName,
+                            Team = deadManTeam,
+                            Uid = deadManUid
+                        },
+                        Weapon = weapon
+                    });
         }
     }
 }

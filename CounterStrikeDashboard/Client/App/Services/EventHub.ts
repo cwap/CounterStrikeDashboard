@@ -32,8 +32,9 @@
 
             }
 
-            this.hub.client.playerKilled = (dt, killerUid, killerName, deadUid, deadName) => {
-                console.log(killerName + " killed " + deadName);
+            this.hub.client.playerKilled = (evt) => {
+                console.log("someone died");
+                var obj = Serializer.deserializeObj(evt);
             };
         }
     }

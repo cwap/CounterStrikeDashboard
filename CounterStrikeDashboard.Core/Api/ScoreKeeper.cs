@@ -21,7 +21,7 @@ namespace CounterStrikeDashboard.Core.Api
             _eventManager = eventManager;
             _eventManager.JoinedTeamEvent.OnPlayerAdded += new Action<DateTime, string, string>((dt, pUid, pName) => AddPlayer(pName, pUid));
             _eventManager.JoinedTeamEvent.OnJoinedTeam += new Action<DateTime, string, string, string>((dt, pUid, pName, team) => JoinTeam(pUid, pName, team));
-            _eventManager.KillEvent.OnPlayerKilled += new Action<DateTime, string, string, string, string>((dt, kUid, kName, dUid, dName) => ApplyKill(kUid, kName, dUid, dName));
+            //_eventManager.KillEvent.OnPlayerKilled += KillEvent_OnPlayerKilled;
             _eventManager.MapStartedEvent.OnNewMapStarted += new Action<DateTime, string>((dt, map) => StartNewMap(map));
             _eventManager.RoundWinEvent.OnRoundEnded += new Action<DateTime, string>((dt, winner) => EndRound(winner));
             _eventManager.ControlEvents.OnControlReset += OnControlReset;
@@ -75,31 +75,18 @@ namespace CounterStrikeDashboard.Core.Api
 
         public void RemovePlayer(string name, string uniqueIdentifier)
         {
-            if (uniqueIdentifier == "BOT")
-                CurrentMap.Players.Single(x => x.Name == uniqueIdentifier).Connected = false;
-            else
-                CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Connected = false;
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Connected = false;
         }
 
         public void ChangePlayerName(string oldName, string newName, string uniqueIdentifier)
         {
-            if (uniqueIdentifier == "BOT")
-                CurrentMap.Players.Single(x => x.Name == oldName).Name = newName;
-            else
-                CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == uniqueIdentifier).Name = newName;
         }
 
         public void ApplyKill(string killerUId, string killerName, string deadPersonUId, string deadPersonName)
         {
-            if (killerUId == "BOT")
-                CurrentMap.Players.Single(x => x.Name == killerName).Kills++;
-            else
-                CurrentMap.Players.Single(x => x.UniqueIdentifier == killerUId).Kills++;
-
-            if (deadPersonUId == "BOT")
-                CurrentMap.Players.Single(x => x.Name == deadPersonName).Deaths++;
-            else
-                CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;            
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == killerUId).Kills++;
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == deadPersonUId).Deaths++;            
         }
 
         public void EndRound(string winnerTeam)
@@ -114,10 +101,7 @@ namespace CounterStrikeDashboard.Core.Api
 
         public void JoinTeam(string playerUid, string playerName, string teamString)
         {
-            if (playerUid == "BOT")
-                CurrentMap.Players.Single(x => x.Name == playerName).Team = teamString;
-            else 
-                CurrentMap.Players.Single(x => x.UniqueIdentifier == playerUid).Team = teamString;
+            CurrentMap.Players.Single(x => x.UniqueIdentifier == playerUid).Team = teamString;
         }
 
         public void PrintScores()

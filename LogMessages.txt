@@ -16,14 +16,14 @@ PLAYERS
 ????log L 05/17/2015 - 20:16:32: "cwap<1><4294967295><CT>" changed name to "cwapp"
 
 ENVIRONMENT
-????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><CT>" triggered "Touched_A_Hostage"
+????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><CT>" triggered "Touched_A_Hostage"	<---- TODO: Mangler Lost_Touch_With_Hostage ?
 ????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><CT>" triggered "Rescued_A_Hostage"
 ????log L 05/17/2015 - 20:18:42: "cwap<1><4294967295><TERRORIST>" triggered "Killed_A_Hostage"
 ????log L 05/14/2015 - 16:04:15: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Spawned_With_The_Bomb"
 ????log L 05/14/2015 - 16:04:48: "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>" triggered "Dropped_The_Bomb"
 ????log L 05/14/2015 - 16:05:05: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Got_The_Bomb"
 ????log L 05/14/2015 - 16:14:57: "[P*D]L33t B0t (100)<1><BOT><TERRORIST>" triggered "Planted_The_Bomb"
-????log L 05/14/2015 - 16:20:29: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Begin_Bomb_Defuse_With_Kit" <----- TODO: MANGLER Without Kit
+????log L 05/14/2015 - 16:20:29: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Begin_Bomb_Defuse_With_Kit" <----- TODO: MANGLER Without_Kit
 ????log L 05/14/2015 - 16:20:34: "[POD]Pissed Off (100)<7><BOT><CT>" triggered "Defused_The_Bomb"
 
 WIN CONDITIONS
@@ -46,4 +46,4 @@ MAP END
 
 
 ERRORS:
-Change team: "????log L 05/17/2015 - 20:18:50: \"cwap<1><4294967295><TERRORIST>\" joined team \"CT\"\n\0"
+Change team: "????log L 05/17/2015 - 20:18:50: "cwap<1><4294967295><TERRORIST>" joined team "CT"

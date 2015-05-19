@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 
 namespace CounterStrikeDashboard.Core.Services.CsEvents.EventParserHelpers
 {
-    class PlayerParser
+    static class PlayerParser
     {
-        public static void ParsePlayer(string playerString, out string player, out string uid)
+        public static void ParsePlayer(string playerString, out string player, out string uid, out string team)
         {
+            // Template "[P*D]Chris_Rock (100)<3><BOT><TERRORIST>"
             var playerRegex = new Regex("\".*?<");
             var almostPlayerName = playerRegex.Match(playerString).Value;
             player = almostPlayerName.Substring(1, almostPlayerName.Length - 2);
 
-            var uidRegex = new Regex("<.*?>");
-            var almostPlayerUid = uidRegex.Matches(playerString)[1].Value;
+            var infoRegex = new Regex("<.*?>");
+            var almostPlayerUid = infoRegex.Matches(playerString)[1].Value;
             uid = almostPlayerUid.Substring(1, almostPlayerUid.Length - 2);
+
+            var almostTeam = infoRegex.Matches(playerString)[2].Value;
+            var teamStr = almostTeam.Substring(1, almostTeam.Length - 2);
+            team = teamStr == "CT" ? "CT" : "T";
+
+            // Fix for bots
+            if (uid == "BOT")
+                uid = player;
         }
     }
 }
