@@ -1,4 +1,4 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿
 using CounterStrikeDashboard.Core.CsEvents.Events;
 using CounterStrikeDashboard.Core.CsEvents.Impl.EventParserHelpers;
 using CounterStrikeDashboard.Core.Services.CsEvents.EventParserHelpers;

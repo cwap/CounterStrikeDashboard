@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleTester
 {
-    public class FileEventSource : ICsEventSource
+    public class FileEventSource 
     {
         public event Action<string> OnNewEvent;
 

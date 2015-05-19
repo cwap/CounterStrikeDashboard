@@ -1,4 +1,5 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿
+using CounterStrikeDashboard.Core.CsEvents.Events;
 using CounterStrikeDashboard.Core.CsEvents.Impl.EventParserHelpers;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,18 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
         //Template: Started map "de_falling" (CRC "875406954")
         private const string PREFIX = "Started map \"";
 
-        public event Action<DateTime, string> OnNewMapStarted;
+        public event Action<MapStartedEvent> OnNewMapStarted;
 
         public void Execute(ParsedEvent evt)
         {
             string mapName = GetMapName(evt.Event);
             if (OnNewMapStarted != null)
-                OnNewMapStarted(evt.DateTime, mapName);
+                OnNewMapStarted(new MapStartedEvent()
+                    {
+                        Map = mapName,
+                        EventTime = evt.DateTime,
+                        OriginalEvent = evt.Event,
+                    });
         }
 
         private string GetMapName(string p)

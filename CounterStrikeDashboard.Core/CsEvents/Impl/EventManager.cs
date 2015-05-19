@@ -1,4 +1,4 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿
 using CounterStrikeDashboard.Core.CsEvents.ControlEvents;
 using CounterStrikeDashboard.Core.CsEvents.CsHandlers;
 using CounterStrikeDashboard.Core.Infrastructure;
@@ -24,6 +24,9 @@ namespace CounterStrikeDashboard.Core.CsEvents.Impl
         public KillEventHandler KillEvent { get; private set; }
         public MapStartedEventHandler MapStartedEvent { get; private set; }
         public RoundWinEventHandler RoundWinEvent { get; private set; }
+        public DefusedBombEventHandler DefusedBombEvent { get; private set; }
+        public StartedDefuseBombEventHandler StartedDefuseBombEvent { get; private set; }
+
         public ControlEventsHandler ControlEvents { get; private set; }
 
         public EventManager(IEventParser eventParser = null, IEnumerable<ICsEventSink> eventSinks = null)
@@ -37,13 +40,17 @@ namespace CounterStrikeDashboard.Core.CsEvents.Impl
             MapStartedEvent = new MapStartedEventHandler();
             RoundWinEvent = new RoundWinEventHandler();
             ControlEvents = new ControlEventsHandler();
+            DefusedBombEvent = new DefusedBombEventHandler();
+            StartedDefuseBombEvent = new StartedDefuseBombEventHandler();
 
             _eventHandlers = new List<ICsEventHandler>()
             {
                 JoinedTeamEvent,
                 KillEvent,
                 MapStartedEvent,
-                RoundWinEvent
+                RoundWinEvent,
+                StartedDefuseBombEvent,
+                DefusedBombEvent,
             };
         }
 

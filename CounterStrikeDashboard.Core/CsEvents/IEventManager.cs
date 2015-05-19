@@ -17,6 +17,8 @@ namespace CounterStrikeDashboard.Core.CsEvents
         KillEventHandler KillEvent { get; }
         MapStartedEventHandler MapStartedEvent { get; }
         RoundWinEventHandler RoundWinEvent { get; }
+        DefusedBombEventHandler DefusedBombEvent { get; }
+        StartedDefuseBombEventHandler StartedDefuseBombEvent { get; }
         ControlEventsHandler ControlEvents { get; }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using CounterStrikeDashboard.Communication;
 using CounterStrikeDashboard.Core;
-using CounterStrikeDashboard.Core.Api;
 using CounterStrikeDashboard.Core.CsEvents.Impl;
-using CounterStrikeDashboard.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +17,9 @@ namespace ConsoleTester
             var filesource = new FileEventSource();
             var server = new CommunicationServer();
             var eventManager = new EventManager();
-            var scoreKeeper = new ScoreKeeper(eventManager);
 
             filesource.OnNewEvent += eventManager.HandleEvent;
             filesource.Run();
-
-            scoreKeeper.PrintScores();
 
             //Timer t = new Timer(new TimerCallback(x => stateKeeper.PrintScores()), null, 0, 5000);
 

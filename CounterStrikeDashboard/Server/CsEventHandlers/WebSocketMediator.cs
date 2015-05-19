@@ -34,8 +34,20 @@ namespace CounterStrikeDashboard.Server.CsEventHandlers
             _eventManager.KillEvent.OnPlayerKilled += KillEvent_OnPlayerKilled;
             _eventManager.MapStartedEvent.OnNewMapStarted += MapStartedEvent_OnNewMapStarted;
             _eventManager.RoundWinEvent.OnRoundEnded += RoundWinEvent_OnRoundEnded;
+            _eventManager.DefusedBombEvent.OnPlayerDefusedBomb += DefusedBombEvent_OnPlayerDefusedBomb;
+            _eventManager.StartedDefuseBombEvent.OnPlayerStartedDefusingBomb += StartedDefuseBombEvent_OnPlayerStartedDefusingBomb;
 
             _eventManager.ControlEvents.OnControlReset += ControlEvents_OnControlReset;
+        }
+
+        void StartedDefuseBombEvent_OnPlayerStartedDefusingBomb(StartedDefuseBombEvent obj)
+        {
+            HubContext.Clients.All.startedDefuseBomb(obj);
+        }
+
+        void DefusedBombEvent_OnPlayerDefusedBomb(DefusedBombEvent obj)
+        {
+            HubContext.Clients.All.defusedBomb(obj);
         }
 
         void KillEvent_OnPlayerKilled(KillEvent evt)
@@ -48,24 +60,24 @@ namespace CounterStrikeDashboard.Server.CsEventHandlers
             HubContext.Clients.All.controlReset();
         }
 
-        void RoundWinEvent_OnRoundEnded(DateTime arg1, string arg2)
+        void RoundWinEvent_OnRoundEnded(RoundWinEvent evt)
         {
-            HubContext.Clients.All.roundEnded(arg1, arg2);
+            HubContext.Clients.All.roundEnded(evt);
         }
 
-        void MapStartedEvent_OnNewMapStarted(DateTime arg1, string arg2)
+        void MapStartedEvent_OnNewMapStarted(MapStartedEvent evt)
         {
-            HubContext.Clients.All.newMapStarted(arg1, arg2);
+            HubContext.Clients.All.newMapStarted(evt);
         }
 
-        void JoinedTeamEvent_OnJoinedTeam(DateTime arg1, string arg2, string arg3, string arg4)
+        void JoinedTeamEvent_OnJoinedTeam(JoinedTeamEvent evt)
         {
-            HubContext.Clients.All.joinedTeam(arg1, arg2, arg3, arg4);
+            HubContext.Clients.All.joinedTeam(evt);
         }
 
-        void JoinedTeamEvent_OnPlayerAdded(DateTime arg1, string arg2, string arg3)
+        void JoinedTeamEvent_OnPlayerAdded(PlayerAddedEvent evt)
         {
-            HubContext.Clients.All.playerAdded(arg1, arg2, arg3);
+            HubContext.Clients.All.playerAdded(evt);
         }
     }
 }

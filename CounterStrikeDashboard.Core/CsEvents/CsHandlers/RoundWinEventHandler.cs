@@ -1,4 +1,5 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿
+using CounterStrikeDashboard.Core.CsEvents.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,32 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
         private const string CT_TRIGGER = "Team \"CT\" triggered \"";
         private const string T_TRIGGER = "Team \"TERRORIST\" triggered \"";
 
-        public event Action<DateTime, string> OnRoundEnded;
+        public event Action<RoundWinEvent> OnRoundEnded;
 
         public void Execute(Impl.EventParserHelpers.ParsedEvent evt)
         {
             var team = evt.Event.StartsWith(CT_TRIGGER) ? "CT" : "T";
 
+            string winType = null;
+            if (evt.Event.StartsWith(CT_TRIGGER))
+            {
+                var winInformation = evt.Event.Substring(CT_TRIGGER.Length - 1);
+                winType = winInformation.Substring(0, winInformation.IndexOf("\""));
+            }
+            else
+            {
+                var winInformation = evt.Event.Substring(T_TRIGGER.Length - 1);
+                winType = winInformation.Substring(0, winInformation.IndexOf("\""));
+            }
+
             if (OnRoundEnded != null)
-                OnRoundEnded(evt.DateTime, team);
+                OnRoundEnded(new RoundWinEvent()
+                {
+                    EventTime = evt.DateTime,
+                    OriginalEvent = evt.Event,
+                    Team = team,
+                    WinType = winType,
+                });
         }
 
         public bool Matches(Impl.EventParserHelpers.ParsedEvent evt)

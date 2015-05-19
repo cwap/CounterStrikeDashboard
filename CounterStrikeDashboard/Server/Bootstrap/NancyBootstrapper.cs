@@ -1,7 +1,6 @@
 ﻿using ConsoleTester;
 using CounterStrikeDashboard.Communication;
 using CounterStrikeDashboard.Core;
-using CounterStrikeDashboard.Core.Api;
 using CounterStrikeDashboard.Core.CsEvents;
 using CounterStrikeDashboard.Core.CsEvents.Impl;
 using CounterStrikeDashboard.Core.Infrastructure;
@@ -73,7 +72,6 @@ namespace CounterStrikeDashboard.Server.Bootstrap
 
             var eventParser = new EventParser();
             var eventManager = new EventManager(eventParser, new List<ICsEventSink>() { new ConsoleSink(), new FileSink() });
-            var scoreKeeper = new ScoreKeeper(eventManager);
 
             var webSocketMediator = new WebSocketMediator(eventManager);
 
@@ -83,7 +81,6 @@ namespace CounterStrikeDashboard.Server.Bootstrap
             filesource.OnNewEvent += eventManager.HandleEvent;
 
             container.Register<IEventManager>(eventManager);
-            container.Register<ScoreKeeper>(scoreKeeper);
             container.Register<WebSocketMediator>(webSocketMediator);
             container.Register<Application>(application);
             container.Register<FileEventSource>(filesource); // TODO - Remove and clean up

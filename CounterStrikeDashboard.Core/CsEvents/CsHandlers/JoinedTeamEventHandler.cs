@@ -1,4 +1,5 @@
-﻿using CounterStrikeDashboard.Core.Api;
+﻿
+using CounterStrikeDashboard.Core.CsEvents.Events;
 using CounterStrikeDashboard.Core.CsEvents.Impl.EventParserHelpers;
 using CounterStrikeDashboard.Core.Services.CsEvents.EventParserHelpers;
 using System;
@@ -15,8 +16,8 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
 
         private const string EVENT_STRING = "\" joined team \"";
 
-        public event Action<DateTime, string, string> OnPlayerAdded;
-        public event Action<DateTime, string, string, string> OnJoinedTeam;
+        public event Action<PlayerAddedEvent> OnPlayerAdded;
+        public event Action<JoinedTeamEvent> OnJoinedTeam;
 
         public void Execute(ParsedEvent evt)
         {
@@ -31,9 +32,30 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
             PlayerParser.ParsePlayer(playerString, out playerName, out playerUid, out playerTeam);
 
             if (OnPlayerAdded != null)
-                OnPlayerAdded(evt.DateTime, playerUid, playerName);
+                OnPlayerAdded(new PlayerAddedEvent()
+                {
+                    EventTime = evt.DateTime,
+                    OriginalEvent = evt.Event,
+                    Player = new Player()
+                    {
+                        Name = playerName,
+                        Uid = playerUid,
+                        Team = null
+                    }
+                });
             if (OnJoinedTeam != null)
-                OnJoinedTeam(evt.DateTime, playerUid, playerName, teamString == "TERRORIST" ? "T" : "CT");
+                OnJoinedTeam(new JoinedTeamEvent()
+                {
+                    EventTime = evt.DateTime,
+                    OriginalEvent = evt.Event,
+                    Player = new Player()
+                    {
+                        Name = playerName,
+                        Uid = playerUid,
+                        Team = teamString == "TERRORIST" ? "T" : "CT",
+                    },
+                    Team = teamString == "TERRORIST" ? "T" : "CT"
+                });
         }
 
         public bool Matches(ParsedEvent evt)

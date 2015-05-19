@@ -48,9 +48,16 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="CsEvents\ControlEvents\ControlEventsHandler.cs" />
+    <Compile Include="CsEvents\Events\DefusedBombEvent.cs" />
+    <Compile Include="CsEvents\Events\JoinedTeamEvent.cs" />
     <Compile Include="CsEvents\Events\KillEvent.cs" />
+    <Compile Include="CsEvents\Events\MapStartedEvent.cs" />
     <Compile Include="CsEvents\Events\Models\EventBase.cs" />
     <Compile Include="CsEvents\Events\Models\Player.cs" />
+    <Compile Include="CsEvents\Events\PlantedBombEvent.cs" />
+    <Compile Include="CsEvents\Events\PlayerAddedEvent.cs" />
+    <Compile Include="CsEvents\Events\RoundWinEvent.cs" />
+    <Compile Include="CsEvents\Events\StartedDefuseBombEvent.cs" />
     <Compile Include="Infrastructure\ICounterStrikeCommunicationServer.cs" />
     <Compile Include="Infrastructure\ICsEventSink.cs" />
     <Compile Include="Infrastructure\ICsEventSource.cs" />
@@ -76,12 +83,13 @@
     <Compile Include="CsEvents\Impl\EventParser.cs" />
     <Compile Include="CsEvents\Impl\EventParserHelpers\ParsedEvent.cs" />
     <Compile Include="CsEvents\Impl\EventParserHelpers\PlayerParser.cs" />
-    <Compile Include="Api\ScoreKeeper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Api\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
