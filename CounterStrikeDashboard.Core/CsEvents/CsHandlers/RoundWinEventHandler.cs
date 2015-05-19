@@ -31,12 +31,12 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
             string winType = null;
             if (evt.Event.StartsWith(CT_TRIGGER))
             {
-                var winInformation = evt.Event.Substring(CT_TRIGGER.Length - 1);
+                var winInformation = evt.Event.Substring(CT_TRIGGER.Length);
                 winType = winInformation.Substring(0, winInformation.IndexOf("\""));
             }
             else
             {
-                var winInformation = evt.Event.Substring(T_TRIGGER.Length - 1);
+                var winInformation = evt.Event.Substring(T_TRIGGER.Length);
                 winType = winInformation.Substring(0, winInformation.IndexOf("\""));
             }
 
