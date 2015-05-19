@@ -7,10 +7,6 @@
             this.controlService = controlService;
             this.eventHub = eventHub;
             this.fixScope = function ($scope) {
-                if (!$scope.scores) {
-                    $scope.scores = {};
-                }
-
                 if (!$scope.dashboard) {
                     $scope.dashboard = {};
                 }

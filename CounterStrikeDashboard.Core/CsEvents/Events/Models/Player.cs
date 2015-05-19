@@ -20,7 +20,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.Events
         }
 
         [DataMember]
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
 
         [DataMember]
         public string Uid { get; set; }

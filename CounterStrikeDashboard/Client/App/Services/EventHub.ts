@@ -17,20 +17,24 @@
                 console.log("control reset");
             }
 
-            this.hub.client.roundEnded = (dt, winner) => {
-                this.scoreboard.roundWon(winner);
+            this.hub.client.roundEnded = (evt) => {
+                var obj = Serializer.deserializeObj(evt);
+                this.scoreboard.roundWon(obj.team);
             }
 
-            this.hub.client.newMapStarted = (dt, map) => {
-                this.scoreboard.startNewMap(map);
+            this.hub.client.newMapStarted = (evt) => {
+                var obj = Serializer.deserializeObj(evt);
+                this.scoreboard.startNewMap(obj.map);
             }
 
-            this.hub.client.joinedTeam = (dt, playerUid, playerName, team) => {
-                this.scoreboard.changePlayerTeam(playerUid, team);
+            this.hub.client.joinedTeam = (evt) => {
+                var obj = Serializer.deserializeObj(evt);
+                this.scoreboard.changePlayerTeam(obj.player.uid, obj.team);
             }
 
-            this.hub.client.playerAdded = (dt, playerUid, playerName) => {
-                console.log("player added. name: " + playerName);
+            this.hub.client.playerAdded = (evt) => {
+                var obj = Serializer.deserializeObj(evt);
+                this.scoreboard.playerAdded(obj.player.uid, obj.player.playerName, obj.player.team);
             }
 
             this.hub.client.playerKilled = (evt) => {

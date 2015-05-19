@@ -38,9 +38,9 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
                     OriginalEvent = evt.Event,
                     Player = new Player()
                     {
-                        Name = playerName,
+                        PlayerName = playerName,
                         Uid = playerUid,
-                        Team = null
+                        Team = "NONE"
                     }
                 });
             if (OnJoinedTeam != null)
@@ -50,7 +50,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
                     OriginalEvent = evt.Event,
                     Player = new Player()
                     {
-                        Name = playerName,
+                        PlayerName = playerName,
                         Uid = playerUid,
                         Team = teamString == "TERRORIST" ? "T" : "CT",
                     },

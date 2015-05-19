@@ -19,11 +19,41 @@
         }
 
         changePlayerTeam = (uid, team) => {
+            var row = this.findMapScoreRow(uid);
+            if (row == null) {
+                console.log('Could not find player that changed team. Uid: ' + uid);
+                return;
+            }
 
+            row.team = team;
         }
 
-        private findMapScoreRow(uid) {
-            //for (number i = 0; i < 
+        playerAdded = (uid, name, team) => {
+            var row = this.findMapScoreRow(uid);
+            if (row == null) {
+                row = new MapScoreRow();
+                row.placement = 0;
+                row.points = 0;
+                row.kills = 0;
+                row.deaths = 0;
+                row.teamkills = 0;
+                this.currentMapScoreboard.rows.push(row);
+            };
+
+            row.playerName = name;
+            row.team = team;
+            row.playerUid = uid;
+        }
+
+        private findMapScoreRow(uid) : MapScoreRow {
+            for (var i = 0; i < this.currentMapScoreboard.rows.length; i++) {
+                var row = this.currentMapScoreboard.rows[i];
+                if (row.playerUid === uid) {
+                    return row;
+                }
+            }
+
+            return null;
         }
     }
 } 

@@ -335,6 +335,13 @@
     <TypeScriptCompile Include="Client\App\Models\MapScoreboard.ts" />
     <TypeScriptCompile Include="Client\App\Models\MapScoreRow.ts" />
     <TypeScriptCompile Include="Client\App\Models\ScoreRowBase.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\DefusedBombEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\JoinedTeamEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\MapStartedEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\PlantedBombEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\PlayerAddedEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\RoundWinEvent.ts" />
+    <TypeScriptCompile Include="Client\App\Models\Events\StartedDefuseBombEvent.ts" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />

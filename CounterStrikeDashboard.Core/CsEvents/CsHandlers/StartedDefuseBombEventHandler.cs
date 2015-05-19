@@ -36,7 +36,7 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
                     OriginalEvent = evt.Event,
                     Player = new Player()
                     {
-                        Name = playerName,
+                        PlayerName = playerName,
                         Uid = playerUid,
                         Team = playerTeam
                     }

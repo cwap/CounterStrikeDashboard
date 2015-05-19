@@ -22,7 +22,12 @@ namespace CounterStrikeDashboard.Core.Services.CsEvents.EventParserHelpers
 
             var almostTeam = infoRegex.Matches(playerString)[2].Value;
             var teamStr = almostTeam.Substring(1, almostTeam.Length - 2);
-            team = teamStr == "CT" ? "CT" : "T";
+            if (string.IsNullOrEmpty(teamStr))
+                team = "NONE";
+            else if (teamStr == "CT")
+                team = "CT";
+            else
+                team = "T";
 
             // Fix for bots
             if (uid == "BOT")

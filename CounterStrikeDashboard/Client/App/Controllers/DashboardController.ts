@@ -12,10 +12,6 @@
         }
 
         private fixScope = ($scope: any) => {
-            if (!$scope.scores) {
-                $scope.scores = {};
-            }
-
             if (!$scope.dashboard) {
                 $scope.dashboard = {};
             }

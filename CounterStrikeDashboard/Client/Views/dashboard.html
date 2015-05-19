@@ -6,30 +6,32 @@
     Mapname: {{mapScoreboard.map}}
     T: {{mapScoreboard.tScore}}
     CT: {{mapScoreboard.ctScore}}
-    <div ng-repeat="session in getScoreboard()">
-        <div ng-repeat="map in session.maps">
-            Map: {{map.mapName}}
-        <div ng-repeat="team in map.teams">{{team.team}}: {{team.score}}</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Player</th>
-                        <th>Kills</th>
-                        <th>Deaths</th>
-                        <th>Teams</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="player in map.players">
-                        <td>{{$index + 1}}</td>
-                        <td>{{player.name}}</td>
-                        <td>{{player.kills}}</td>
-                        <td>{{player.deaths}}</td>
-                        <td>{{player.team}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>UID</th>
+                <th>Points</th>
+                <th>Kills</th>
+                <th>Deaths</th>
+                <th>TKs</th>
+                <th>Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in mapScoreboard.rows">
+                <td>{{$index + 1}}</td>
+                <td>{{row.playerName}}</td>
+                <td>{{row.playerUid}}</td>
+                <td>{{row.points}}</td>
+                <td>{{row.kills}}</td>
+                <td>{{row.deaths}}</td>
+                <td>{{row.teamkills}}</td>
+                <td>{{row.team}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 </div>

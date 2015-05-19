@@ -7,5 +7,6 @@
         kills: number;
         deaths: number;
         teamkills: number;
+        team: string;
     }
 } 

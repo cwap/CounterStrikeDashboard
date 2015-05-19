@@ -49,13 +49,13 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
                         OriginalEvent = evt.Event,
                         Killer = new Player()
                         {
-                            Name = killerName,
+                            PlayerName = killerName,
                             Team = killerTeam,
                             Uid = killerUid
                         },
                         Dead = new Player()
                         {
-                            Name = deadManName,
+                            PlayerName = deadManName,
                             Team = deadManTeam,
                             Uid = deadManUid
                         },

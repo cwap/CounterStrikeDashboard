@@ -23,20 +23,24 @@ var csdash;
                 console.log("control reset");
             };
 
-            this.hub.client.roundEnded = function (dt, winner) {
-                _this.scoreboard.roundWon(winner);
+            this.hub.client.roundEnded = function (evt) {
+                var obj = csdash.Serializer.deserializeObj(evt);
+                _this.scoreboard.roundWon(obj.team);
             };
 
-            this.hub.client.newMapStarted = function (dt, map) {
-                _this.scoreboard.startNewMap(map);
+            this.hub.client.newMapStarted = function (evt) {
+                var obj = csdash.Serializer.deserializeObj(evt);
+                _this.scoreboard.startNewMap(obj.map);
             };
 
-            this.hub.client.joinedTeam = function (dt, playerUid, playerName, team) {
-                _this.scoreboard.changePlayerTeam(playerUid, team);
+            this.hub.client.joinedTeam = function (evt) {
+                var obj = csdash.Serializer.deserializeObj(evt);
+                _this.scoreboard.changePlayerTeam(obj.player.uid, obj.team);
             };
 
-            this.hub.client.playerAdded = function (dt, playerUid, playerName) {
-                console.log("player added. name: " + playerName);
+            this.hub.client.playerAdded = function (evt) {
+                var obj = csdash.Serializer.deserializeObj(evt);
+                _this.scoreboard.playerAdded(obj.player.uid, obj.player.playerName, obj.player.team);
             };
 
             this.hub.client.playerKilled = function (evt) {
