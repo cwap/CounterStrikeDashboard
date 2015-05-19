@@ -28,11 +28,7 @@
                 return this.eventHub.scoreboard;
             };
             $scope.reset = this.controlService.reset;
-            $scope.doStuff = this.doStuff;
-        }
-
-        doStuff = () => {
-            console.log("Doing stuff");
+            $scope.replayFile = this.controlService.replayFile;
         }
     }
 }

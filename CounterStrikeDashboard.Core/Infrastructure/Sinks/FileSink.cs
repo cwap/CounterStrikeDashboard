@@ -29,5 +29,11 @@ namespace CounterStrikeDashboard.Core.Infrastructure.Sinks
         {
             writer.Dispose();
         }
+
+
+        public void ReplayEvent(string csEvent)
+        {
+            //do nothing
+        }
     }
 }

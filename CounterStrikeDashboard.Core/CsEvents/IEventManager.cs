@@ -12,6 +12,7 @@ namespace CounterStrikeDashboard.Core.CsEvents
     {
         void HandleEvent(string evt);
         void SendResetEvent();
+        void SendFileReplayRequest(String file);
 
         JoinedTeamEventHandler JoinedTeamEvent { get; }
         KillEventHandler KillEvent { get; }

@@ -9,5 +9,6 @@ namespace CounterStrikeDashboard.Core.Infrastructure
     public interface ICsEventSink
     {
         void HandleEvent(string csEvent);
+        void ReplayEvent(string csEvent);
     }
 }

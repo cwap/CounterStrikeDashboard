@@ -36,5 +36,10 @@ namespace CounterStrikeDashboard.Core
         {
             EventManager.SendResetEvent();
         }
+
+        public void ReplayFile(String file)
+        {
+            EventManager.SendFileReplayRequest(file);
+        }
     }
 }

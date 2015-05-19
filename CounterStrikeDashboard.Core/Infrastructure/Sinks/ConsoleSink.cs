@@ -12,5 +12,11 @@ namespace CounterStrikeDashboard.Core.Infrastructure.Sinks
         {
             Console.WriteLine(csEvent);
         }
+
+
+        public void ReplayEvent(string csEvent)
+        {
+            Console.WriteLine(csEvent);
+        }
     }
 }

@@ -38,6 +38,12 @@ namespace CounterStrikeDashboard.Server.CsEventHandlers
             _eventManager.StartedDefuseBombEvent.OnPlayerStartedDefusingBomb += StartedDefuseBombEvent_OnPlayerStartedDefusingBomb;
 
             _eventManager.ControlEvents.OnControlReset += ControlEvents_OnControlReset;
+            _eventManager.ControlEvents.OnFileReplayRequested += ControlEvents_OnFileReplayRequested;
+        }
+
+        void ControlEvents_OnFileReplayRequested(string obj)
+        {
+            HubContext.Clients.All.fileReplayRequested(obj);
         }
 
         void StartedDefuseBombEvent_OnPlayerStartedDefusingBomb(StartedDefuseBombEvent obj)

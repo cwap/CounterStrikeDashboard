@@ -1,5 +1,4 @@
 ﻿module csdash {
-    'use strict';
 
     export class EventHub extends HubBase {
 

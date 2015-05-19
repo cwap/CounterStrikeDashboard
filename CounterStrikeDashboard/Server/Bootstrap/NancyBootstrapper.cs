@@ -28,6 +28,7 @@ namespace CounterStrikeDashboard.Server.Bootstrap
         private static readonly Logger _log = LogManager.GetCurrentClassLogger();
         
         private TinyIoCContainer _container;
+        private FileEventSource _filesource;
 
         public NancyBootstrapper(TinyIoCContainer container)
         {
@@ -67,7 +68,7 @@ namespace CounterStrikeDashboard.Server.Bootstrap
                 return null;
             };
 
-            var filesource = new ConsoleTester.FileEventSource();
+            _filesource = new ConsoleTester.FileEventSource();
             var server = new CommunicationServer();
 
             var eventParser = new EventParser();
@@ -78,16 +79,22 @@ namespace CounterStrikeDashboard.Server.Bootstrap
             var application = new Application(server, eventManager);
             application.Start();
 
-            filesource.OnNewEvent += eventManager.HandleEvent;
+            _filesource.OnNewEvent += eventManager.HandleEvent;
+            eventManager.ControlEvents.OnFileReplayRequested += ControlEvents_OnFileReplayRequested;
 
             container.Register<IEventManager>(eventManager);
             container.Register<WebSocketMediator>(webSocketMediator);
             container.Register<Application>(application);
-            container.Register<FileEventSource>(filesource); // TODO - Remove and clean up
+            container.Register<FileEventSource>(_filesource); // TODO - Remove and clean up
 
             base.ApplicationStartup(container, pipelines);
 
-            filesource.Run();
+            
+        }
+
+        void ControlEvents_OnFileReplayRequested(string obj)
+        {
+            _filesource.Run(obj);
         }
     }
 }

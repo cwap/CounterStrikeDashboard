@@ -54,6 +54,11 @@ namespace CounterStrikeDashboard.Core.CsEvents.Impl
             };
         }
 
+        public void SendFileReplayRequest(String file)
+        {
+            ControlEvents.FireFileReplayRequested(file);
+        }
+
         public void SendResetEvent()
         {
             ControlEvents.FireResetEvent();

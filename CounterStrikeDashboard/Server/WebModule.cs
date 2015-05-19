@@ -13,7 +13,7 @@ namespace CounterStrikeDashboard.Server
 {
     public class WebModule : NancyModule
     {
-        public WebModule(Application application, ConsoleTester.FileEventSource filesource) // TODO: Remove file eventsource
+        public WebModule(Application application)
         {            
             Get["/"] = p =>
             {
@@ -23,7 +23,13 @@ namespace CounterStrikeDashboard.Server
             Post["/sessions/reset"] = p =>
             {
                 application.Reset();
-                filesource.Run();
+                return HttpStatusCode.OK;
+            };
+
+            Post["/sessions/replayFile/{fileName}"] = p =>
+            {
+                string file = p.fileName;
+                application.ReplayFile(file);
                 return HttpStatusCode.OK;
             };
         }

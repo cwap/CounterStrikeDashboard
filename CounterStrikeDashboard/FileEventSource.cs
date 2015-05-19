@@ -12,9 +12,9 @@ namespace ConsoleTester
     {
         public event Action<string> OnNewEvent;
 
-        public void Run()
+        public void Run(string fileName)
         {
-            using (var file = File.OpenText("lol3.txt"))
+            using (var file = File.OpenText(fileName))
             {
                 while (!file.EndOfStream)
                 {

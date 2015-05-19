@@ -2,11 +2,22 @@
     export class ConfigurationController {
         public static $inject = [
             '$scope',
-            '$http'
+            '$http',
+            'controlService'
         ];
         
-        constructor(private $scope: any, $http: any) {
-            
+        constructor(private $scope: any, $http: any, private controlService: ControlService) {
+            this.fixScope($scope);
+        }
+
+        private fixScope = ($scope: any) => {
+            if (!$scope.configuration) {
+                $scope.configuration = {};
+            }
+
+            $scope.replayFile = () => {
+                this.controlService.replayFile($scope.configuration.fileName);
+            }
         }
     }
 }
