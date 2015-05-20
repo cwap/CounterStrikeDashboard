@@ -2,3 +2,9 @@
 - total
 - save / reload
 V UX spiller 100%
+- Fix server settings
+	- round time / timelimit
+	- map cycle
+
+Nice-to-have
+- End map splash screen
