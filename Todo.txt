@@ -5,6 +5,8 @@ V UX spiller 100%
 - Fix server settings
 	- round time / timelimit
 	- map cycle
+- change name
+- spectator bug?
 
 Nice-to-have
 - End map splash screen
