@@ -11,6 +11,13 @@
                     console.log("Unable to reset sessions");
                 });
             };
+            this.replayFile = function (fileName) {
+                _this.$http.post('/sessions/replayFile/' + fileName).success(function (data, status, headers, config) {
+                    console.log("Replay file event sent");
+                }).error(function (data, status, headers, config) {
+                    console.log("Unable to replay file sessions");
+                });
+            };
         }
         ControlService.$inject = [
             '$http'

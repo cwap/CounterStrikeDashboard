@@ -23,7 +23,8 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
         {
             var splittedEvent = evt.Event.Split(new string[] { EVENT_STRING }, StringSplitOptions.RemoveEmptyEntries);
             var playerString = splittedEvent[0];
-            var teamString = splittedEvent[1].Substring(0, splittedEvent[1].Length - 1);
+            var trimmedTeamString = splittedEvent[1].Trim('\n', '\0', ' ');
+            var teamString = trimmedTeamString.Substring(0, trimmedTeamString.Length - 1);
 
             string playerUid;
             string playerName;
@@ -52,9 +53,9 @@ namespace CounterStrikeDashboard.Core.CsEvents.CsHandlers
                     {
                         PlayerName = playerName,
                         Uid = playerUid,
-                        Team = teamString == "TERRORIST" ? "T" : "CT",
+                        Team = String.IsNullOrEmpty(teamString) ? "NONE" : teamString == "TERRORIST" ? "T" : "CT",
                     },
-                    Team = teamString == "TERRORIST" ? "T" : "CT"
+                    Team = String.IsNullOrEmpty(teamString) ? "NONE" : teamString == "TERRORIST" ? "T" : "CT",
                 });
         }
 

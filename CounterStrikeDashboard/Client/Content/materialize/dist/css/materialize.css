@@ -5885,9 +5885,9 @@ a.waves-effect .waves-ripple {
   will-change: bottom, opacity; }
 
 .collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid #292929;
+  border-right: 1px solid #292929;
+  border-left: 1px solid #292929;
   margin: 0.5rem 0 1rem 0; }
 
 .collapsible-header {
@@ -5897,7 +5897,7 @@ a.waves-effect .waves-ripple {
   line-height: 3rem;
   padding: 0 1rem;
   background-color: #fff;
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #292929; }
   .collapsible-header i {
     width: 2rem;
     font-size: 1.6rem;
@@ -5910,7 +5910,8 @@ a.waves-effect .waves-ripple {
 .collapsible-body {
   overflow: hidden;
   display: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #292929;
+  padding: 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }

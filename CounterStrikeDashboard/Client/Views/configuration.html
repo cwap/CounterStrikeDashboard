@@ -1,3 +1,11 @@
-﻿<h1>Configuration</h1>
-<input type="text" ng-model="configuration.fileName"/>
-<button ng-click="replayFile()">Replay file</button>
+﻿<div class="row" style="padding-top: 20px;">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="txtReplayFile" type="text" ng-model="configuration.fileName" />
+                <label for="txtReplayFile" class="active">File to replay</label>
+            </div>
+            <button ng-click="replayFile()" class="waves-effect waves-light btn grey darken-4">Replay file</button>
+        </div>
+    </form>
+</div>

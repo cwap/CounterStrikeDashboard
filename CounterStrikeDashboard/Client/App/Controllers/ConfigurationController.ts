@@ -15,6 +15,8 @@
                 $scope.configuration = {};
             }
 
+            $scope.configuration.fileName = 'lol3.txt';
+
             $scope.replayFile = () => {
                 this.controlService.replayFile($scope.configuration.fileName);
             }

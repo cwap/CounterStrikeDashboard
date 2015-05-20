@@ -1,37 +1,67 @@
-﻿<h1>Dashboard</h1>
-<button ng-click="reset()">Reset</button>
+﻿<div class="row" style="padding-top: 20px;">
+    <button ng-click="reset()" class="waves-effect waves-light btn grey darken-4">Reset</button>
+    <div class="col s12">
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li ng-repeat="mapScoreboard in getScoreboard().mapScoreboards">
+                <div class="collapsible-header" style="background-color: #292929">
+                    {{mapScoreboard.map}} - {{mapScoreboard.started | date:'HH:mm:ss'}}
+                </div>
+                <div class="collapsible-body" class="grey darken-4">
+                    <!-- For some reason we need a div here - otherwise it wont expand -->
+                    <div></div>
 
-<div ng-repeat="mapScoreboard in getScoreboard().mapScoreboards">
-    <h2>Map</h2>
-    Mapname: {{mapScoreboard.map}}
-    T: {{mapScoreboard.tScore}}
-    CT: {{mapScoreboard.ctScore}}
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Player</th>
-                <th>UID</th>
-                <th>Points</th>
-                <th>Kills</th>
-                <th>Deaths</th>
-                <th>TKs</th>
-                <th>Team</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="row in mapScoreboard.rows">
-                <td>{{$index + 1}}</td>
-                <td>{{row.playerName}}</td>
-                <td>{{row.playerUid}}</td>
-                <td>{{row.points}}</td>
-                <td>{{row.kills}}</td>
-                <td>{{row.deaths}}</td>
-                <td>{{row.teamkills}}</td>
-                <td>{{row.team}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
+                    <table dynamiccollapsible>
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>UID</th>
+                                <th>Points</th>
+                                <th>Kills</th>
+                                <th>Deaths</th>
+                                <th>TKs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="color: #7DA5D2">
+                                <td style="font-size: 1.2em">{{mapScoreboard.ctScore}} - CT Forces ({{cts.length}} players)</td>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr ng-repeat="row in cts = (mapScoreboard.rows | orderBy : '-points' | filter:{team:'CT'}:true)" style="color: #7DA5D2">
+                                <td>{{row.playerName}}</td>
+                                <td>{{row.playerUid}}</td>
+                                <td>{{row.points}}</td>
+                                <td>{{row.kills}}</td>
+                                <td>{{row.deaths}}</td>
+                                <td>{{row.teamkills}}</td>
+                            </tr>
+                            <tr style="color: #C85A46">
+                                <td style="font-size: 1.2em">{{mapScoreboard.tScore}} - Terrorist Forces ({{ts.length}} players)</td>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr ng-repeat="row in ts = (mapScoreboard.rows | orderBy : '-points' | filter:{team:'T'}:true)" style="color: #C85A46">
+                                <td>{{row.playerName}}</td>
+                                <td>{{row.playerUid}}</td>
+                                <td>{{row.points}}</td>
+                                <td>{{row.kills}}</td>
+                                <td>{{row.deaths}}</td>
+                                <td>{{row.teamkills}}</td>
+                            </tr>
+                            <tr style="color: #646464">
+                                <td style="font-size: 1.2em">Spectators ({{nones.length}} players)</td>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr ng-repeat="row in nones = (mapScoreboard.rows | orderBy : '-points' | filter:{team:'NONE'}:true)" style="color: #646464">
+                                <td>{{row.playerName}}</td>
+                                <td>{{row.playerUid}}</td>
+                                <td>{{row.points}}</td>
+                                <td>{{row.kills}}</td>
+                                <td>{{row.deaths}}</td>
+                                <td>{{row.teamkills}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

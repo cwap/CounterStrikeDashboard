@@ -1,5 +1,5 @@
 ﻿module csdash {
-    export class DashboardController {
+    export class DashboardController implements ScoreboardUpdatedListener {
 
         public static $inject = [
             '$scope',
@@ -8,7 +8,12 @@
         ];
 
         constructor(private $scope: any, private controlService: ControlService, private eventHub: EventHub) {
-            this.fixScope($scope);                      
+            this.fixScope($scope);    
+            this.eventHub.scoreboard.registerObserver(this);
+        }
+
+        onScoreboardUpdated = () => {
+            $scope.$apply();
         }
 
         private fixScope = ($scope: any) => {

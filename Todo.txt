@@ -1,0 +1,4 @@
+- suicide event (man få ikke death lige nu)
+- total
+- save / reload
+V UX spiller 100%

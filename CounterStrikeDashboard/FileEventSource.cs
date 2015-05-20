@@ -21,6 +21,8 @@ namespace ConsoleTester
                     var line = file.ReadLine();
                     if (OnNewEvent != null)
                         OnNewEvent(line);
+
+                 //   System.Threading.Thread.Sleep(20);
                 }
             }
         }

@@ -6,8 +6,6 @@
 };
 var csdash;
 (function (csdash) {
-    'use strict';
-
     var EventHub = (function (_super) {
         __extends(EventHub, _super);
         function EventHub() {
@@ -30,7 +28,7 @@ var csdash;
 
             this.hub.client.newMapStarted = function (evt) {
                 var obj = csdash.Serializer.deserializeObj(evt);
-                _this.scoreboard.startNewMap(obj.map);
+                _this.scoreboard.startNewMap(obj.map, obj.eventTime);
             };
 
             this.hub.client.joinedTeam = function (evt) {
@@ -44,8 +42,8 @@ var csdash;
             };
 
             this.hub.client.playerKilled = function (evt) {
-                console.log("someone died");
                 var obj = csdash.Serializer.deserializeObj(evt);
+                _this.scoreboard.playerKilled(obj.killer.uid, obj.killer.team, obj.dead.uid, obj.dead.team, obj.weapon);
             };
         }
         EventHub.$inject = [];

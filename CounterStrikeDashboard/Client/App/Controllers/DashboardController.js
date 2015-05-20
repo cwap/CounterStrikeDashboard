@@ -6,6 +6,9 @@
             this.$scope = $scope;
             this.controlService = controlService;
             this.eventHub = eventHub;
+            this.onScoreboardUpdated = function () {
+                $scope.$apply();
+            };
             this.fixScope = function ($scope) {
                 if (!$scope.dashboard) {
                     $scope.dashboard = {};
@@ -19,12 +22,10 @@
                     return _this.eventHub.scoreboard;
                 };
                 $scope.reset = _this.controlService.reset;
-                $scope.doStuff = _this.doStuff;
-            };
-            this.doStuff = function () {
-                console.log("Doing stuff");
+                $scope.replayFile = _this.controlService.replayFile;
             };
             this.fixScope($scope);
+            this.eventHub.scoreboard.registerObserver(this);
         }
         DashboardController.$inject = [
             '$scope',

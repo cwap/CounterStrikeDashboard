@@ -7,9 +7,9 @@
 
     <link rel="stylesheet" type="text/css" href="Content/materialize/dist/css/materialize.min.css" />
 </head>
-<body ng-app="csDashApp" ng-controller="appController">
+<body ng-app="csDashApp" ng-controller="appController" style="background-color: #171410; color: #FFAA00">
     <header>
-        <nav class="indigo darken-1">
+        <nav class="grey darken-4">
             <div class="nav-wrapper container">
                 <ul class="left">
                     <li ng-class="{active: $route.current.activetab == 'dashboard'}"><a href="#/">Dashboard</a></li>
@@ -42,28 +42,9 @@
             <div ng-view></div>
         </div>
     </main>
-
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    
     <script type="text/javascript" src="Content/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="Content/materialize/dist/js/materialize.js"></script>
     <script type="text/javascript" src="Content/signalr/jquery.signalR.min.js"></script>
     <script type="text/javascript" src="Content/angular/angular.min.js"></script>
     <script type="text/javascript" src="Content/angular-route/angular-route.min.js"></script>

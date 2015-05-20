@@ -24,7 +24,7 @@
 
             this.hub.client.newMapStarted = (evt) => {
                 var obj = Serializer.deserializeObj(evt);
-                this.scoreboard.startNewMap(obj.map);
+                this.scoreboard.startNewMap(obj.map, obj.eventTime);
             }
 
             this.hub.client.joinedTeam = (evt) => {
@@ -38,8 +38,8 @@
             }
 
             this.hub.client.playerKilled = (evt) => {
-                console.log("someone died");
                 var obj = Serializer.deserializeObj(evt);
+                this.scoreboard.playerKilled(obj.killer.uid, obj.killer.team, obj.dead.uid, obj.dead.team, obj.weapon);
             }
         }
     }
